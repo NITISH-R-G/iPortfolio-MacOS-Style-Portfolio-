@@ -7,6 +7,18 @@ import {fileURLToPath} from 'url';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          gsap: ['gsap', '@gsap/react'],
+          pdf: ['react-pdf'],
+          zustand: ['zustand', 'immer']
+        }
+      }
+    }
+  },
     resolvers: {
       alias: {
           '#components' : resolve(dirname(fileURLToPath(import.meta.url)), 'src/components'),
