@@ -32,10 +32,16 @@ const Home = () => {
                                         <li
                                                 key={project.id}
                                                 className={clsx("group folder", project.windowPosition)}
-                                                onClick={() => handleOpenProjectFinder(project)}
                                         >
-                                                <img src="/images/folder.png" alt={project.name} />
-                                                <p>{project.name}</p>
+                                                <button
+                                                        type="button"
+                                                        aria-label={`Open folder ${project.name}`}
+                                                        onClick={() => handleOpenProjectFinder(project)}
+                                                        className="flex flex-col items-center justify-center w-full h-full focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md"
+                                                >
+                                                        <img src="/images/folder.png" alt={project.name} />
+                                                        <p>{project.name}</p>
+                                                </button>
                                         </li>
                                 ))}
                         </ul>
