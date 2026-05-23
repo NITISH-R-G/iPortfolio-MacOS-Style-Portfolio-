@@ -1,8 +1,15 @@
+import { lazy, Suspense } from "react";
 import gsap from "gsap";
 import Draggable from "gsap/Draggable";
 import {Navbar, Welcome, Dock, Home} from "./components";
-import WindowWrapper from "./hoc/WindowWrapper.jsx";
-import { Finder, Resume, Safari, Terminal, Text, Image, Contact} from "./windows";
+
+const Terminal = lazy(() => import("./windows/Terminal.jsx"));
+const Safari = lazy(() => import("./windows/Safari.jsx"));
+const Resume = lazy(() => import("./windows/Resume.jsx"));
+const Finder = lazy(() => import("./windows/Finder.jsx"));
+const Text = lazy(() => import("./windows/Text.jsx"));
+const Image = lazy(() => import("./windows/Image.jsx"));
+const Contact = lazy(() => import("./windows/Contact.jsx"));
 
 gsap.registerPlugin(Draggable);
 
@@ -12,13 +19,15 @@ const App = () => {
             <Navbar />
             <Welcome />
             <Dock />
-            <Terminal />
-            <Safari />
-            <Resume />
-            <Finder />
-            <Text />
-            <Image />
-            <Contact />
+            <Suspense fallback={null}>
+                <Terminal />
+                <Safari />
+                <Resume />
+                <Finder />
+                <Text />
+                <Image />
+                <Contact />
+            </Suspense>
             <Home/>
         </main>
     );
