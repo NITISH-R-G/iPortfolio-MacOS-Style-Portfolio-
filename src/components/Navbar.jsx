@@ -13,8 +13,15 @@ const Navbar = () => {
 
                 <ul>
                     { navLinks.map(({ id , name, type}) => (
-                        <li key={id} onClick={() => openWindow(type)}>
-                            <p>{name}</p>
+                        <li key={id}>
+                            <button
+                                type="button"
+                                onClick={() => openWindow(type)}
+                                aria-label={`Open ${name}`}
+                                className="w-full h-full flex items-center focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-2"
+                            >
+                                <p>{name}</p>
+                            </button>
                         </li>
                     ))}
                 </ul>
