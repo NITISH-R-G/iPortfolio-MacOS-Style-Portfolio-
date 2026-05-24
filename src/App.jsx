@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import gsap from "gsap";
 import Draggable from "gsap/Draggable";
 import {Navbar, Welcome, Dock, Home} from "./components";
@@ -12,13 +13,15 @@ const App = () => {
             <Navbar />
             <Welcome />
             <Dock />
-            <Terminal />
-            <Safari />
-            <Resume />
-            <Finder />
-            <Text />
-            <Image />
-            <Contact />
+            <Suspense fallback={null}>
+                <Terminal />
+                <Safari />
+                <Resume />
+                <Finder />
+                <Text />
+                <Image />
+                <Contact />
+            </Suspense>
             <Home/>
         </main>
     );
