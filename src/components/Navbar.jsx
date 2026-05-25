@@ -13,8 +13,15 @@ const Navbar = () => {
 
                 <ul>
                     { navLinks.map(({ id , name, type}) => (
-                        <li key={id} onClick={() => openWindow(type)}>
-                            <p>{name}</p>
+                        <li key={id}>
+                            <button
+                                type="button"
+                                aria-label={`Open ${name}`}
+                                onClick={() => openWindow(type)}
+                                className="w-full h-full text-left focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                            >
+                                <p>{name}</p>
+                            </button>
                         </li>
                     ))}
                 </ul>
@@ -24,7 +31,13 @@ const Navbar = () => {
                 <ul>
                     { navIcons.map(({ id, img}) => (
                         <li key={id}>
-                            <img src={img} className="icon-hover" alt={`icon-${id}`} />
+                            <button
+                                type="button"
+                                aria-label={`Navbar icon ${id}`}
+                                className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                            >
+                                <img src={img} className="icon-hover" alt={`icon-${id}`} />
+                            </button>
                         </li>
                     ))}
                 </ul>
