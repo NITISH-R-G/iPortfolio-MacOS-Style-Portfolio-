@@ -54,7 +54,7 @@ describe('Finder Component', () => {
         });
 
         // Mock window.open
-        global.window.open = vi.fn();
+        window.open = vi.fn();
     });
 
     it('renders sidebar and content', () => {
@@ -102,6 +102,6 @@ describe('Finder Component', () => {
 
         // Click on Link (url)
         fireEvent.click(screen.getByLabelText('Open Link'));
-        expect(global.window.open).toHaveBeenCalledWith("https://example.com", "_blank");
+        expect(window.open).toHaveBeenCalledWith("https://example.com", "_blank");
     });
 });
