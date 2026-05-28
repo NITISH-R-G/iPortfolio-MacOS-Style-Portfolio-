@@ -318,18 +318,6 @@ body {
 
             ul {
                 @apply space-y-1;
-
-                .active {
-                    @apply bg-blue-100 text-blue-700;
-                }
-
-                .not-active {
-                    @apply text-gray-700 hover:bg-gray-200;
-                }
-
-                li {
-                    @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
-                }
             }
         }
 
@@ -337,15 +325,7 @@ body {
             @apply flex-1 p-8 bg-white max-w-2xl relative;
 
             li {
-                @apply absolute flex items-center flex-col gap-3;
-
-                img {
-                    @apply object-contain object-center size-16 relative group-hover:scale-105;
-                }
-
-                p {
-                    @apply text-sm text-center font-medium w-40;
-                }
+                @apply absolute;
             }
         }
     }
