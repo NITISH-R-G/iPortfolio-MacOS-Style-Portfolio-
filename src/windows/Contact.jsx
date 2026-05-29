@@ -33,9 +33,9 @@ const Contact = () => {
         <div className="flex flex-col h-full w-full bg-[#F5F5F7]/80 backdrop-blur-2xl text-gray-900 font-sans overflow-hidden">
 
             {/* --- macOS Title Bar --- */}
-            <div
+            <header
                 id="window-header"
-                className="relative flex items-center justify-center h-11 shrink-0 select-none border-b border-gray-300/50 bg-gray-100/50 backdrop-blur-md"
+                className="relative flex items-center justify-center h-11 shrink-0 select-none border-b border-gray-300/50 bg-gray-100/50 backdrop-blur-md cursor-move"
             >
                 <div className="absolute left-4 flex items-center">
                     {/* Passing canClose to handle the red button logic */}
@@ -44,7 +44,7 @@ const Contact = () => {
                 <h2 className="text-[13px] font-semibold text-gray-700/90 tracking-wide drop-shadow-sm">
                     Contact Me
                 </h2>
-            </div>
+            </header>
 
             {/* --- Main Content --- */}
             <div className="flex-1 overflow-y-auto p-6 scrollbar-hide">

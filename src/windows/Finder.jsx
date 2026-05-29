@@ -52,10 +52,10 @@ const Finder = () => {
 
     return (
         <>
-            <div id="window-header">
+            <header id="window-header" className="cursor-move">
                 <WindowControls target="finder" />
                 <Search className="icon" />
-            </div>
+            </header>
 
             <div className="bg-white flex h-full">
                 <div className="sidebar">

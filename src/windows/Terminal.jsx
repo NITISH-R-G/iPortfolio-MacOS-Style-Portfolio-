@@ -9,10 +9,10 @@ const Terminal = () => {
         <div className="flex flex-col h-auto min-h-[300px] max-h-[80vh] w-full min-w-[350px] max-w-[600px] bg-black/90 text-green-400 font-mono text-sm">
 
             {/* Header: Fixed height, always visible */}
-            <div id="window-header" className="flex items-center justify-between px-4 py-2 bg-gray-800 rounded-t-lg shrink-0 select-none cursor-move">
+            <header id="window-header" className="flex items-center justify-between px-4 py-2 bg-gray-800 rounded-t-lg shrink-0 select-none cursor-move">
                 <WindowControls target="terminal" />
                 <h2 className="ml-4 text-gray-300 font-semibold">Tech Stack</h2>
-            </div>
+            </header>
 
             {/* Content Body: Grows with content, scrolls if too crowded */}
             <div className="techstack flex-1 p-4 overflow-y-auto overflow-x-hidden custom-scrollbar">
