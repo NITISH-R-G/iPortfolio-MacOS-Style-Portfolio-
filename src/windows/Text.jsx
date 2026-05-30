@@ -12,10 +12,10 @@ const Text = () => {
 
     return (
         <>
-            <div id="window-header">
+            <header id="window-header" className="cursor-move">
                 <WindowControls target="txtfile" />
                 <h2>{name}</h2>
-            </div>
+            </header>
 
             <div className="p-5 space-y-6 bg-white">
                 {image ? (

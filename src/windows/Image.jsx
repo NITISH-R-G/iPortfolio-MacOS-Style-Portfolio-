@@ -12,10 +12,10 @@ const ImageWindowContent = () => {
 
     return (
         <>
-            <div id="window-header">
+            <header id="window-header" className="cursor-move">
                 <WindowControls target="imgfile" />
                 <h2>{name}</h2>
-            </div>
+            </header>
 
             <div className="p-5 bg-white">
                 {imageUrl ? (

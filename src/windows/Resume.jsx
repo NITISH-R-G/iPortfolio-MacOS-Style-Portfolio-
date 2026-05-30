@@ -37,7 +37,7 @@ const Resume = () => {
         <div className="flex flex-col h-full w-full">
 
             {/* Header */}
-            <div id="window-header" className="shrink-0 flex items-center justify-between px-2 py-1 bg-gray-200 border-b border-gray-300">
+            <header id="window-header" className="shrink-0 flex items-center justify-between px-2 py-1 bg-gray-200 border-b border-gray-300 cursor-move">
                 <div className="flex items-center gap-2">
                     <WindowControls target="resume" />
                     <h2 className="text-sm font-bold">Resume.pdf</h2>
@@ -71,7 +71,7 @@ const Resume = () => {
                         <Download className="icon w-4 h-4"/>
                     </a>
                 </div>
-            </div>
+            </header>
 
             {/* Content Area */}
             <div className="overflow-auto flex-1 bg-gray-500/10 flex justify-center p-4">
