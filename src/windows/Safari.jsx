@@ -126,7 +126,7 @@ const Safari = () => {
         <div className="flex flex-col h-full w-full bg-[#F5F5F7] font-sans text-gray-900 relative rounded-b-xl overflow-hidden">
 
             {/* --- MacOS Toolbar --- */}
-            <div className="bg-[#f3f4f6] border-b border-[#d1d1d1] flex-shrink-0 z-30">
+            <header id="window-header" className="bg-[#f3f4f6] border-b border-[#d1d1d1] flex-shrink-0 z-30 cursor-move">
                 <div className="flex items-center justify-between px-4 pt-3 pb-2 gap-4">
                     {/* Left Controls */}
                     <div className="flex items-center gap-2 sm:gap-5 w-auto sm:w-1/4">
@@ -188,7 +188,7 @@ const Safari = () => {
                         );
                     })}
                 </div>
-            </div>
+            </header>
 
             {/* --- CONTENT AREA (Grid Layout) --- */}
             <div className="flex-1 relative bg-[#F5F5F7] overflow-hidden">

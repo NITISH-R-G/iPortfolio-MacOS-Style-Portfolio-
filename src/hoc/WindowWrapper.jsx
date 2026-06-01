@@ -34,6 +34,7 @@ const WindowWrapper = (Component, windowKey) => {
 
             // create Draggable instance and return cleanup
             const instances = Draggable.create(el, {
+                trigger: el.querySelector("#window-header") || el,
                 onPress() {
                     focusWindow(windowKey);
                 },
