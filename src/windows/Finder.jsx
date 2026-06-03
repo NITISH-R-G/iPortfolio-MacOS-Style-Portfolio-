@@ -1,4 +1,3 @@
-import { Resume } from "../windows/index.js";
 import { WindowControls } from "../components";
 import WindowWrapper from "../hoc/WindowWrapper.jsx";
 import { Search } from "lucide-react";
