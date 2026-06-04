@@ -83,6 +83,7 @@ const Contact = () => {
                     {/* Email Action Pill */}
                     <button
                         onClick={handleCopyEmail}
+                        aria-label="Copy Email"
                         className="group relative w-full overflow-hidden rounded-xl bg-white/60 hover:bg-white border border-white/40 shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.98] backdrop-blur-md"
                     >
                         <div className="relative z-10 flex items-center justify-between px-4 py-3">

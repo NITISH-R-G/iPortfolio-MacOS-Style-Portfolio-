@@ -23,6 +23,7 @@ const ImageWindowContent = () => {
                         <img
                             src={imageUrl}
                             alt={name}
+                            loading="lazy"
                             className="w-full h-auto max-h-[70vh] object-contain rounded"
                         />
                     </div>

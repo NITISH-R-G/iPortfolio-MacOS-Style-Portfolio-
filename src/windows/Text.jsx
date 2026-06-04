@@ -23,6 +23,7 @@ const Text = () => {
                         <img
                             src={image}
                             alt={name}
+                            loading="lazy"
                             className="w-full h-auto rounded"
                         />
                     </div>
