@@ -38,7 +38,7 @@ const Finder = () => {
                             aria-current={item.id === activeLocation?.id ? "page" : undefined}
                         >
                             {item.title}
-                            <img src={item.icon} className="w-4" alt="" aria-hidden="true" />
+                            <img src={item.icon} className="w-4" alt="" aria-hidden="true" loading="lazy" />
                             <span className="text-sm font-medium truncate">
                                 {item.name}
                             </span>
@@ -70,7 +70,7 @@ const Finder = () => {
                                 className="flex items-center flex-col gap-3 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md p-1 group"
                                 aria-label={`Open ${item.name}`}
                             >
-                                <img src={item.icon} alt="" aria-hidden="true" className="object-contain object-center size-16 relative group-hover:scale-105" />
+                                <img src={item.icon} alt="" aria-hidden="true" loading="lazy" className="object-contain object-center size-16 relative group-hover:scale-105" />
                                 <span className="text-sm text-center font-medium w-40 truncate">{item.name}</span>
                             </button>
                         </li>
