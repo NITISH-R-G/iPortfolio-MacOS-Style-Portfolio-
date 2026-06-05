@@ -10,11 +10,11 @@ gsap.registerPlugin(Draggable);
 
 const App = () => {
     return (
-        <main>
-            <Navbar />
-            <Welcome />
-            <Dock />
-            <ErrorBoundary>
+        <ErrorBoundary>
+            <main>
+                <Navbar />
+                <Welcome />
+                <Dock />
                 <Suspense fallback={null}>
                     <Terminal />
                     <Safari />
@@ -24,9 +24,9 @@ const App = () => {
                     <Image />
                     <Contact />
                 </Suspense>
-            </ErrorBoundary>
-            <Home/>
-        </main>
+                <Home/>
+            </main>
+        </ErrorBoundary>
     );
 };
 

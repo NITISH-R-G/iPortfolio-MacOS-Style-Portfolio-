@@ -39,7 +39,7 @@ const Home = () => {
                                                         onClick={() => handleOpenProjectFinder(project)}
                                                         className="flex flex-col items-center justify-center w-full h-full focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md"
                                                 >
-                                                        <img src="/images/folder.png" alt={project.name} />
+                                                        <img src="/images/folder.png" alt={project.name} loading="lazy" />
                                                         <p>{project.name}</p>
                                                 </button>
                                         </li>
