@@ -57,6 +57,7 @@ const Contact = () => {
                             <img
                                 src="/images/adrian.jpg"
                                 alt="Adrian"
+                                loading="lazy"
                                 className="relative w-24 h-24 rounded-full border-[4px] border-white shadow-xl object-cover transform transition-transform duration-500 hover:scale-105"
                             />
                             {/* Status Badge */}
@@ -84,7 +85,7 @@ const Contact = () => {
                     <button
                         onClick={handleCopyEmail}
                         aria-label="Copy Email"
-                        className="group relative w-full overflow-hidden rounded-xl bg-white/60 hover:bg-white border border-white/40 shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.98] backdrop-blur-md"
+                        className="group relative w-full overflow-hidden rounded-xl bg-white/60 hover:bg-white border border-white/40 shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.98] backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                     >
                         <div className="relative z-10 flex items-center justify-between px-4 py-3">
                             <div className="flex items-center gap-3">
@@ -131,7 +132,7 @@ const Contact = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         onClick={() => handleSocialClick(id)}
-                                        className={`group relative flex items-center p-3 rounded-2xl border transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] active:scale-[0.96]
+                                        className={`group relative flex items-center p-3 rounded-2xl border transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] active:scale-[0.96] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500
                                             ${isVisited
                                             ? "bg-white border-green-400/30 shadow-[0_4px_12px_-2px_rgba(16,185,129,0.15)]"
                                             : "bg-white/50 border-white/60 hover:bg-white shadow-sm hover:shadow-md"
@@ -148,7 +149,7 @@ const Contact = () => {
                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                                 </svg>
                                             ) : (
-                                                <img src={icon} alt={text} className="w-5 h-5 brightness-0 invert opacity-95" />
+                                                <img src={icon} alt={text} loading="lazy" className="w-5 h-5 brightness-0 invert opacity-95" />
                                             )}
                                         </div>
 

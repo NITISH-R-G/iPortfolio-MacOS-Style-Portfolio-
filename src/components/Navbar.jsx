@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <nav>
             <div>
-                <img src="/images/logo.svg" alt="logo" />
+                <img src="/images/logo.svg" alt="logo" loading="lazy" />
                 <p className="font-bold">Nitish's Portfolio</p>
 
                 <ul>
@@ -36,7 +36,7 @@ const Navbar = () => {
                                 aria-label={`Navbar icon ${id}`}
                                 className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
                             >
-                                <img src={img} className="icon-hover" alt={`icon-${id}`} />
+                                <img src={img} className="icon-hover" alt={`icon-${id}`} loading="lazy" />
                             </button>
                         </li>
                     ))}
