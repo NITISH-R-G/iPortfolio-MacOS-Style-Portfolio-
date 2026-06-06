@@ -1,0 +1,49 @@
+name: Autonomous Documentation
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Analyze Repository
+        run: node .github/scripts/analyze.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Diagrams
+        run: node .github/scripts/diagrams.js
+
+      - name: Update README
+        run: node .github/scripts/docs.js
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md .github/diagrams/ .github/knowledge-graph/ || true
+          git commit -m "docs: auto-update repository documentation and diagrams [skip ci]" || echo "No changes to commit"
+          git push

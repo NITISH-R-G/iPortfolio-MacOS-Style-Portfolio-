@@ -1,0 +1,89 @@
+{
+  "components/Dock.jsx": [
+    "constants/index.js",
+    "store/window.js"
+  ],
+  "components/Home.jsx": [
+    "constants/index.js",
+    "store/location.js",
+    "store/window.js"
+  ],
+  "components/Navbar.jsx": [
+    "constants/index.js",
+    "store/window.js"
+  ],
+  "components/Welcome.jsx": [],
+  "components/WindowControls.jsx": [
+    "store/window.js"
+  ],
+  "components/index.js": [
+    "components/Dock.jsx",
+    "components/Home.jsx",
+    "components/Navbar.jsx",
+    "components/Welcome.jsx",
+    "components/WindowControls.jsx"
+  ],
+  "constants/index.js": [],
+  "hoc/WindowWrapper.jsx": [
+    "store/window.js"
+  ],
+  "setupTests.js": [],
+  "store/location.js": [
+    "constants/index.js"
+  ],
+  "store/location.test.js": [
+    "constants/index.js",
+    "store/location.js"
+  ],
+  "store/window.js": [
+    "constants/index.js"
+  ],
+  "store/window.test.js": [
+    "constants/index.js",
+    "store/window.js"
+  ],
+  "windows/Contact.jsx": [
+    "components/index.js",
+    "constants/index.js",
+    "hoc/WindowWrapper.jsx"
+  ],
+  "windows/Finder.jsx": [
+    "components/index.js",
+    "constants/index.js",
+    "hoc/WindowWrapper.jsx",
+    "store/location.js",
+    "store/window.js"
+  ],
+  "windows/Image.jsx": [
+    "components/index.js",
+    "hoc/WindowWrapper.jsx",
+    "store/window.js"
+  ],
+  "windows/Resume.jsx": [
+    "components/index.js",
+    "hoc/WindowWrapper.jsx"
+  ],
+  "windows/Safari.jsx": [
+    "components/index.js",
+    "hoc/WindowWrapper.jsx"
+  ],
+  "windows/Terminal.jsx": [
+    "components/WindowControls.jsx",
+    "constants/index.js",
+    "hoc/WindowWrapper.jsx"
+  ],
+  "windows/Text.jsx": [
+    "components/index.js",
+    "hoc/WindowWrapper.jsx",
+    "store/window.js"
+  ],
+  "windows/index.js": [
+    "windows/Contact.jsx",
+    "windows/Finder.jsx",
+    "windows/Image.jsx",
+    "windows/Resume.jsx",
+    "windows/Safari.jsx",
+    "windows/Terminal.jsx",
+    "windows/Text.jsx"
+  ]
+}
