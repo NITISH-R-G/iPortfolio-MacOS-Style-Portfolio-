@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { execSync } from 'child_process';
 import OpenAI from 'openai';
+import process from 'process';
 
 const runAgent = async () => {
   console.log('Starting AI Agent Review...');
@@ -12,7 +13,7 @@ const runAgent = async () => {
   }
 
   const eventName = process.env.EVENT_NAME;
-  const prNumber = process.env.PR_NUMBER;
+  const _prNumber = process.env.PR_NUMBER;
 
   if (eventName !== 'pull_request') {
     console.log('Not a pull request. Exiting AI Agent.');

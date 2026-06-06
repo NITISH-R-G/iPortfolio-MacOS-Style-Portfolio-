@@ -6,7 +6,7 @@ const generateReadme = () => {
   let repoData = {};
   try {
     repoData = JSON.parse(fs.readFileSync('.github/knowledge-graph/repo-data.json', 'utf8'));
-  } catch (err) {
+  } catch {
     console.error('Could not load repo-data.json, skipping docs generation.');
     return;
   }
@@ -14,7 +14,7 @@ const generateReadme = () => {
   let mermaidDiagram = '';
   try {
     mermaidDiagram = fs.readFileSync('.github/diagrams/architecture.mermaid.md', 'utf8');
-  } catch (err) {
+  } catch {
     console.log('No mermaid diagram found, skipping that section.');
   }
 
