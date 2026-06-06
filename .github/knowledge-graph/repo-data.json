@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T09:05:07.469Z",
+  "timestamp": "2026-06-06T13:58:51.972Z",
   "stack": {
     "frontend": "React",
     "bundler": "Vite",
@@ -13,8 +13,19 @@
   "structure": {
     ".github": {
       "dependabot.yml": "file",
+      "diagrams": {
+        "architecture.mermaid.md": "file",
+        "dependencies.json": "file",
+        "dependencies.svg": "file"
+      },
+      "knowledge-graph": {
+        "repo-data.json": "file"
+      },
       "scripts": {
-        "analyze.js": "file"
+        "ai-agent.js": "file",
+        "analyze.js": "file",
+        "diagrams.js": "file",
+        "docs.js": "file"
       },
       "workflows": {
         "ai-agent.yml": "file",
@@ -116,6 +127,8 @@
     "eslint-plugin-react-refresh",
     "globals",
     "jsdom",
+    "madge",
+    "openai",
     "vite",
     "vitest"
   ]

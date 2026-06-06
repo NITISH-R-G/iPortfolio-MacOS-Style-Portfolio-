@@ -75,8 +75,19 @@ graph TD;
 {
   ".github": {
     "dependabot.yml": "file",
+    "diagrams": {
+      "architecture.mermaid.md": "file",
+      "dependencies.json": "file",
+      "dependencies.svg": "file"
+    },
+    "knowledge-graph": {
+      "repo-data.json": "file"
+    },
     "scripts": {
-      "analyze.js": "file"
+      "ai-agent.js": "file",
+      "analyze.js": "file",
+      "diagrams.js": "file",
+      "docs.js": "file"
     },
     "workflows": {
       "ai-agent.yml": "file",
