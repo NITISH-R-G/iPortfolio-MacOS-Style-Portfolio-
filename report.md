@@ -12,27 +12,25 @@
 
 ## Priority Improvements
 1. Add `loading="lazy"` to `img` tags across `src/components/Navbar.jsx`, `src/windows/Finder.jsx`, and `src/windows/Contact.jsx`.
-2. Add visual focus indicators (`focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none`) to the interactive elements in `src/windows/Contact.jsx` (Email button and Social links).
+2. Add visual focus indicators (`focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none`) to the interactive elements across all windows (Dock icons, Resume controls, Safari navigation) to improve keyboard accessibility.
 
 ## Sprint Plan
 * **Sprint Goal**: Improve performance and accessibility across core app windows.
 * **Tasks**:
-  - Add lazy loading to images.
-  - Implement a11y focus rings on Contact Window interactive elements.
+  - Implement a11y focus rings on interactive elements in `Dock.jsx`, `Resume.jsx`, and `Safari.jsx`.
   - Update `report.md`.
   - Validate by running automated linting and tests.
-* **Implementation Roadmap**: 1. `Navbar.jsx` / `Finder.jsx` / `Contact.jsx` image optimization. 2. `Contact.jsx` a11y. 3. Update report.
-* **Expected Outcomes**: Better rendering performance and a more accessible UI.
+* **Implementation Roadmap**: 1. Extend A11Y focus styles to remaining interactive UI components (Dock, Resume, Safari). 2. Update report.
+* **Expected Outcomes**: A universally accessible UI supporting robust keyboard navigation.
 
 ## Technical Improvements
-* **Architecture**: No significant architectural changes, but enforced consistent asset handling.
-* **Performance**: Reduced upfront image fetching and browser rendering payload by leveraging native image lazy loading.
-* **Scalability**: N/A for this cycle.
+* **Architecture**: Enforced consistent focus state handling across more components.
+* **Performance**: Maintained optimal asset loading strategies.
+* **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
 * **Security**: N/A for this cycle.
 * **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
 * **Documentation**: Updated `report.md` with continuous improvement metrics.
 * **DevOps**: Relied on established CI.
 
 ## Metrics Improved
-* **Performance gains**: Lazy loading prevents off-screen images from blocking page load (improves LCP and initial network payload).
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines, leading to a better user experience.
+* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.

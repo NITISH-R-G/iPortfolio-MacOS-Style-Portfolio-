@@ -134,8 +134,8 @@ const Safari = () => {
                             <WindowControls target="safari" />
                         </div>
                         <div className="hidden sm:flex items-center gap-3 text-gray-500">
-                            <button className="p-1 rounded hover:bg-black/5 disabled:opacity-30" aria-label="Go Back"><ChevronLeft size={18} /></button>
-                            <button className="p-1 rounded hover:bg-black/5 disabled:opacity-30" aria-label="Go Forward"><ChevronRight size={18} /></button>
+                            <button className="p-1 rounded hover:bg-black/5 disabled:opacity-30 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none" aria-label="Go Back"><ChevronLeft size={18} /></button>
+                            <button className="p-1 rounded hover:bg-black/5 disabled:opacity-30 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none" aria-label="Go Forward"><ChevronRight size={18} /></button>
                         </div>
                     </div>
 
@@ -183,7 +183,7 @@ const Safari = () => {
                                 {!isActive && <div className="absolute right-0 top-2 bottom-2 w-[1px] bg-gray-300 group-hover:hidden" />}
                                 <tab.icon size={13} className={`${isActive ? tab.color : "grayscale opacity-60"}`} />
                                 <span className="truncate flex-1 pt-0.5">{tab.title.split('|')[0]}</span>
-                                <button onClick={(e) => handleCloseTab(e, tab.id)} aria-label={`Close tab ${tab.title}`} className={`p-0.5 rounded-md hover:bg-gray-300/80 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}><X size={11} strokeWidth={3} /></button>
+                                <button onClick={(e) => handleCloseTab(e, tab.id)} aria-label={`Close tab ${tab.title}`} className={`p-0.5 rounded-md hover:bg-gray-300/80 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}><X size={11} strokeWidth={3} /></button>
                             </div>
                         );
                     })}
@@ -244,14 +244,14 @@ const Safari = () => {
                                         <div className="flex gap-2">
                                             <button
                                                 onClick={() => scroll('left')}
-                                                className="p-1.5 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 text-gray-600 transition-all active:scale-95"
+                                                className="p-1.5 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 text-gray-600 transition-all active:scale-95 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none"
                                                 aria-label="Scroll left"
                                             >
                                                 <ArrowLeft size={14} />
                                             </button>
                                             <button
                                                 onClick={() => scroll('right')}
-                                                className="p-1.5 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 text-gray-600 transition-all active:scale-95"
+                                                className="p-1.5 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 text-gray-600 transition-all active:scale-95 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none"
                                                 aria-label="Scroll right"
                                             >
                                                 <ArrowRight size={14} />
@@ -313,7 +313,7 @@ const Safari = () => {
                     <div className="flex flex-col items-center justify-center h-full text-gray-300">
                         <Globe size={64} strokeWidth={1} className="mb-4 opacity-20" />
                         <p className="text-sm font-medium opacity-50">No tabs open</p>
-                        <button onClick={() => window.location.reload()} aria-label="Restore Session" className="mt-4 px-4 py-2 bg-white border border-gray-200 shadow-sm rounded-lg text-xs font-medium text-gray-600 hover:text-blue-500 transition-all">
+                        <button onClick={() => window.location.reload()} aria-label="Restore Session" className="mt-4 px-4 py-2 bg-white border border-gray-200 shadow-sm rounded-lg text-xs font-medium text-gray-600 hover:text-blue-500 transition-all focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none">
                             Restore Session
                         </button>
                     </div>
