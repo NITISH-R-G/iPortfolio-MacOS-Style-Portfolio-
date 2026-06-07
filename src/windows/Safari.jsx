@@ -174,9 +174,10 @@ const Safari = () => {
                             <div
                                 key={tab.id}
                                 onClick={() => handleTabClick(tab.id)}
+                                tabIndex={0}
                                 className={`
                                     group relative flex items-center gap-2 px-3 h-7 sm:h-8 min-w-[120px] max-w-[200px] flex-1 
-                                    text-xs font-medium rounded-t-lg select-none cursor-default transition-all duration-200 
+                                    text-xs font-medium rounded-t-lg select-none cursor-pointer transition-all duration-200 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none focus-visible:rounded
                                     ${isActive ? 'bg-[#F5F5F7] text-gray-900 shadow-sm' : 'bg-transparent text-gray-500 hover:bg-black/5'}
                                 `}
                             >
@@ -223,7 +224,7 @@ const Safari = () => {
                                     </div>
                                     <h1 className="text-xl font-bold text-gray-900">{activeTab.title}</h1>
                                     <p className="text-gray-500 text-sm mt-2">{activeTab.description}</p>
-                                    <a href={activeTab.link} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 px-5 py-2 bg-[#1d1d1f] hover:bg-[#0071e3] text-white rounded-full text-sm font-medium transition-all">
+                                    <a href={activeTab.link} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 px-5 py-2 bg-[#1d1d1f] hover:bg-[#0071e3] text-white rounded-full text-sm font-medium transition-all focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none">
                                         Visit Profile <ExternalLink size={14} />
                                     </a>
                                 </div>

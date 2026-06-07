@@ -11,17 +11,18 @@
 * **Opportunities to outperform**: Improve Lighthouse scores by strictly enforcing `loading="lazy"` on image assets, leading to better mobile and desktop performance than pure React OS clones. Implementing native-feeling A11Y features ensures higher overall usability.
 
 ## Priority Improvements
-1. Add `loading="lazy"` to `img` tags across `src/components/Navbar.jsx`, `src/windows/Finder.jsx`, and `src/windows/Contact.jsx`.
-2. Add visual focus indicators (`focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none`) to the interactive elements across all windows (Dock icons, Resume controls, Safari navigation) to improve keyboard accessibility.
+1. Ensure all new components use semantic HTML.
+2. Evaluate memory usage for loaded images and windows.
+3. Consistently apply focus styles globally rather than locally if applicable.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance and accessibility across core app windows.
+* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
 * **Tasks**:
-  - Implement a11y focus rings on interactive elements in `Dock.jsx`, `Resume.jsx`, and `Safari.jsx`.
-  - Update `report.md`.
-  - Validate by running automated linting and tests.
-* **Implementation Roadmap**: 1. Extend A11Y focus styles to remaining interactive UI components (Dock, Resume, Safari). 2. Update report.
-* **Expected Outcomes**: A universally accessible UI supporting robust keyboard navigation.
+  - Evaluate image rendering code and consider standardizing asset serving.
+  - Implement dynamic imports for remaining non-critical JS.
+  - Test memory load on simulated devices.
+* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
+* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
 
 ## Technical Improvements
 * **Architecture**: Enforced consistent focus state handling across more components.
