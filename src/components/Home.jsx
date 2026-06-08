@@ -37,7 +37,7 @@ const Home = () => {
                                                         type="button"
                                                         aria-label={`Open folder ${project.name}`}
                                                         onClick={() => handleOpenProjectFinder(project)}
-                                                        className="flex flex-col items-center justify-center w-full h-full focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md"
+                                                        className="flex flex-col items-center justify-center w-full h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md"
                                                 >
                                                         <img src="/images/folder.png" alt={project.name} loading="lazy" />
                                                         <p>{project.name}</p>
