@@ -212,6 +212,7 @@ const Safari = () => {
                                         <a
                                             className="badge-base__link LI-simple-link"
                                             href="https://in.linkedin.com/in/nitish-r-g-15-10-2007-rgn?trk=profile-badge"
+                                            aria-label="LinkedIn Profile"
                                         >
                                             NITISH R.G.
                                         </a>
