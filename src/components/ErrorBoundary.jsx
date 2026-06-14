@@ -27,7 +27,7 @@ class ErrorBoundary extends Component {
                         type="button"
                         aria-label="Try again"
                         onClick={() => this.setState({ hasError: false, error: null })}
-                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
                     >
                         Try again
                     </button>
