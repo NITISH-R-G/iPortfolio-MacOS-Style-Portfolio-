@@ -32,6 +32,10 @@ body {
 }
 
 @layer base {
+    :focus-visible {
+        @apply outline-none ring-2 ring-blue-500 rounded-sm;
+    }
+
     main {
         @apply w-dvw h-dvh overflow-hidden;
     }

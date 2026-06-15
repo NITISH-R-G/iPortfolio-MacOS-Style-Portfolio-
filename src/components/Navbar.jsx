@@ -18,7 +18,7 @@ const Navbar = () => {
                                 type="button"
                                 aria-label={`Open ${name}`}
                                 onClick={() => openWindow(type)}
-                                className="w-full h-full text-left focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                                className="w-full h-full text-left rounded"
                             >
                                 <p>{name}</p>
                             </button>
@@ -34,7 +34,7 @@ const Navbar = () => {
                             <button
                                 type="button"
                                 aria-label={`Navbar icon ${id}`}
-                                className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                                className=" rounded"
                             >
                                 <img src={img} className="icon-hover" alt={`icon-${id}`} loading="lazy" />
                             </button>

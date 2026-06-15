@@ -50,7 +50,7 @@ const Resume = () => {
                             disabled={pageNumber <= 1}
                             onClick={previousPage}
                             aria-label="Previous Page"
-                            className="p-1 hover:bg-gray-100 disabled:opacity-30 disabled:hover:bg-transparent rounded cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none"
+                            className="p-1 hover:bg-gray-100 disabled:opacity-30 disabled:hover:bg-transparent rounded cursor-pointer transition-colors"
                         >
                             <ChevronLeft size={16} />
                         </button>
@@ -63,13 +63,13 @@ const Resume = () => {
                             disabled={pageNumber >= numPages}
                             onClick={nextPage}
                             aria-label="Next Page"
-                            className="p-1 hover:bg-gray-100 disabled:opacity-30 disabled:hover:bg-transparent rounded cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none"
+                            className="p-1 hover:bg-gray-100 disabled:opacity-30 disabled:hover:bg-transparent rounded cursor-pointer transition-colors"
                         >
                             <ChevronRight size={16} />
                         </button>
                     </div>
 
-                    <a href="/files/resume.pdf" download className="cursor-pointer hover:bg-gray-300 p-1 rounded transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none" title="download resume">
+                    <a href="/files/resume.pdf" download className="cursor-pointer hover:bg-gray-300 p-1 rounded transition-colors" title="download resume">
                         <Download className="icon w-4 h-4"/>
                     </a>
                 </div>
