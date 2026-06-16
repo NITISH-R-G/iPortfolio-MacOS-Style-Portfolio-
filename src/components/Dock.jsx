@@ -89,7 +89,7 @@ const Dock = () => {
                         >
                             <button
                                 type="button"
-                                className="dock-icon focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none rounded-xl"
+                                className="dock-icon rounded-xl"
                                 aria-label={name}
                                 disabled={!canOpen}
                                 onClick={(e) =>

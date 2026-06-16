@@ -32,7 +32,7 @@ const Finder = () => {
                             type="button"
                             onClick={() => setActiveLocation(item)}
                             className={clsx(
-                                "flex items-center gap-2 px-3 py-2 w-full rounded-md cursor-pointer transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500",
+                                "flex items-center gap-2 px-3 py-2 w-full rounded-md cursor-pointer transition-colors",
                                 item.id === activeLocation?.id ? "active bg-blue-100 text-blue-700" : "not-active text-gray-700 hover:bg-gray-200"
                             )}
                             aria-current={item.id === activeLocation?.id ? "page" : undefined}
@@ -67,7 +67,7 @@ const Finder = () => {
                             <button
                                 type="button"
                                 onClick={() => openItem(item)}
-                                className="flex items-center flex-col gap-3 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md p-1 group"
+                                className="flex items-center flex-col gap-3 rounded-md p-1 group"
                                 aria-label={`Open ${item.name}`}
                             >
                                 <img src={item.icon} alt="" aria-hidden="true" loading="lazy" className="object-contain object-center size-16 relative group-hover:scale-105" />
