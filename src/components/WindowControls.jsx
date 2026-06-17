@@ -6,18 +6,18 @@ const WindowControls = ({ target }) => {
         <div id="window-controls" className="flex items-center gap-2">
             <button
                 type="button"
-                className="close focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500 rounded-full"
+                className="close rounded-full focus-visible:ring-red-500 focus-visible:ring-offset-2"
                 aria-label={`Close ${target} window`}
                 onClick={() => closeWindow(target)}
             />
             <button
                 type="button"
-                className="minimize focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-yellow-500 rounded-full"
+                className="minimize rounded-full focus-visible:ring-yellow-500 focus-visible:ring-offset-2"
                 aria-label={`Minimize ${target} window`}
             />
             <button
                 type="button"
-                className="maximize focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-green-500 rounded-full"
+                className="maximize rounded-full focus-visible:ring-green-500 focus-visible:ring-offset-2"
                 aria-label={`Maximize ${target} window`}
             />
         </div>

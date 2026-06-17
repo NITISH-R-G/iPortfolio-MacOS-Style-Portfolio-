@@ -134,8 +134,8 @@ const Safari = () => {
                             <WindowControls target="safari" />
                         </div>
                         <div className="hidden sm:flex items-center gap-3 text-gray-500">
-                            <button className="p-1 rounded hover:bg-black/5 disabled:opacity-30 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none" aria-label="Go Back"><ChevronLeft size={18} /></button>
-                            <button className="p-1 rounded hover:bg-black/5 disabled:opacity-30 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none" aria-label="Go Forward"><ChevronRight size={18} /></button>
+                            <button className="p-1 rounded hover:bg-black/5 disabled:opacity-30" aria-label="Go Back"><ChevronLeft size={18} /></button>
+                            <button className="p-1 rounded hover:bg-black/5 disabled:opacity-30" aria-label="Go Forward"><ChevronRight size={18} /></button>
                         </div>
                     </div>
 
@@ -177,14 +177,14 @@ const Safari = () => {
                                 tabIndex={0}
                                 className={`
                                     group relative flex items-center gap-2 px-3 h-7 sm:h-8 min-w-[120px] max-w-[200px] flex-1 
-                                    text-xs font-medium rounded-t-lg select-none cursor-pointer transition-all duration-200 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none focus-visible:rounded
+                                    text-xs font-medium rounded-t-lg select-none cursor-pointer transition-all duration-200
                                     ${isActive ? 'bg-[#F5F5F7] text-gray-900 shadow-sm' : 'bg-transparent text-gray-500 hover:bg-black/5'}
                                 `}
                             >
                                 {!isActive && <div className="absolute right-0 top-2 bottom-2 w-[1px] bg-gray-300 group-hover:hidden" />}
                                 <tab.icon size={13} className={`${isActive ? tab.color : "grayscale opacity-60"}`} />
                                 <span className="truncate flex-1 pt-0.5">{tab.title.split('|')[0]}</span>
-                                <button onClick={(e) => handleCloseTab(e, tab.id)} aria-label={`Close tab ${tab.title}`} className={`p-0.5 rounded-md hover:bg-gray-300/80 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}><X size={11} strokeWidth={3} /></button>
+                                <button onClick={(e) => handleCloseTab(e, tab.id)} aria-label={`Close tab ${tab.title}`} className={`p-0.5 rounded-md hover:bg-gray-300/80 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}><X size={11} strokeWidth={3} /></button>
                             </div>
                         );
                     })}
@@ -224,7 +224,7 @@ const Safari = () => {
                                     </div>
                                     <h1 className="text-xl font-bold text-gray-900">{activeTab.title}</h1>
                                     <p className="text-gray-500 text-sm mt-2">{activeTab.description}</p>
-                                    <a href={activeTab.link} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 px-5 py-2 bg-[#1d1d1f] hover:bg-[#0071e3] text-white rounded-full text-sm font-medium transition-all focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none">
+                                    <a href={activeTab.link} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 px-5 py-2 bg-[#1d1d1f] hover:bg-[#0071e3] text-white rounded-full text-sm font-medium transition-all">
                                         Visit Profile <ExternalLink size={14} />
                                     </a>
                                 </div>
@@ -245,14 +245,14 @@ const Safari = () => {
                                         <div className="flex gap-2">
                                             <button
                                                 onClick={() => scroll('left')}
-                                                className="p-1.5 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 text-gray-600 transition-all active:scale-95 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none"
+                                                className="p-1.5 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 text-gray-600 transition-all active:scale-95"
                                                 aria-label="Scroll left"
                                             >
                                                 <ArrowLeft size={14} />
                                             </button>
                                             <button
                                                 onClick={() => scroll('right')}
-                                                className="p-1.5 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 text-gray-600 transition-all active:scale-95 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none"
+                                                className="p-1.5 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 text-gray-600 transition-all active:scale-95"
                                                 aria-label="Scroll right"
                                             >
                                                 <ArrowRight size={14} />
@@ -314,7 +314,7 @@ const Safari = () => {
                     <div className="flex flex-col items-center justify-center h-full text-gray-300">
                         <Globe size={64} strokeWidth={1} className="mb-4 opacity-20" />
                         <p className="text-sm font-medium opacity-50">No tabs open</p>
-                        <button onClick={() => window.location.reload()} aria-label="Restore Session" className="mt-4 px-4 py-2 bg-white border border-gray-200 shadow-sm rounded-lg text-xs font-medium text-gray-600 hover:text-blue-500 transition-all focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none">
+                        <button onClick={() => window.location.reload()} aria-label="Restore Session" className="mt-4 px-4 py-2 bg-white border border-gray-200 shadow-sm rounded-lg text-xs font-medium text-gray-600 hover:text-blue-500 transition-all">
                             Restore Session
                         </button>
                     </div>
