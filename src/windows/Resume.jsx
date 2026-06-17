@@ -69,7 +69,7 @@ const Resume = () => {
                         </button>
                     </div>
 
-                    <a href="/files/resume.pdf" download className="cursor-pointer hover:bg-gray-300 p-1 rounded transition-colors" title="download resume">
+                    <a href="/files/resume.pdf" download aria-label="Download resume" className="cursor-pointer hover:bg-gray-300 p-1 rounded transition-colors" title="download resume">
                         <Download className="icon w-4 h-4"/>
                     </a>
                 </div>
