@@ -54,10 +54,10 @@ const Contact = () => {
                     <div className="flex flex-col items-center gap-3 text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
                         <div className="relative group cursor-default">
                             <div className="absolute inset-0 bg-gradient-to-tr from-blue-400 to-purple-400 rounded-full blur-lg opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
-                            <img
+                            <img loading="lazy"
                                 src="/images/adrian.jpg"
                                 alt="Adrian"
-                                loading="lazy"
+
                                 className="relative w-24 h-24 rounded-full border-[4px] border-white shadow-xl object-cover transform transition-transform duration-500 hover:scale-105"
                             />
                             {/* Status Badge */}
@@ -82,7 +82,7 @@ const Contact = () => {
                     </div>
 
                     {/* Email Action Pill */}
-                    <button
+                    <button type="button"
                         onClick={handleCopyEmail}
                         aria-label="Copy Email"
                         className="group relative w-full overflow-hidden rounded-xl bg-white/60 hover:bg-white border border-white/40 shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.98] backdrop-blur-md"
@@ -149,7 +149,7 @@ const Contact = () => {
                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                                 </svg>
                                             ) : (
-                                                <img src={icon} alt={text} loading="lazy" className="w-5 h-5 brightness-0 invert opacity-95" />
+                                                <img loading="lazy"  src={icon} alt={text}  className="w-5 h-5 brightness-0 invert opacity-95" />
                                             )}
                                         </div>
 

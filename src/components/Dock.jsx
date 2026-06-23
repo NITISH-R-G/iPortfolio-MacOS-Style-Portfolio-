@@ -87,8 +87,8 @@ const Dock = () => {
                             data-tooltip-content={name}
                             data-tooltip-delay-show={180}
                         >
-                            <button
-                                type="button"
+                            <button type="button"
+
                                 className="dock-icon rounded-xl"
                                 aria-label={name}
                                 disabled={!canOpen}
@@ -96,11 +96,11 @@ const Dock = () => {
                                     handleClick(id, canOpen, e.currentTarget)
                                 }
                             >
-                                <img
+                                <img loading="lazy"
                                     src={`/images/${icon}`}
                                     alt={name}
                                     draggable={false}
-                                    loading="lazy"
+
                                     className={canOpen ? "" : "opacity-60"}
                                 />
                             </button>

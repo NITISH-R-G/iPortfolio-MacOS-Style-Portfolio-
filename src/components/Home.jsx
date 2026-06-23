@@ -33,8 +33,8 @@ const Home = () => {
                                                 key={project.id}
                                                 className={clsx("group folder", project.windowPosition)}
                                         >
-                                                <button
-                                                        type="button"
+                                                <button type="button"
+
                                                         aria-label={`Open folder ${project.name}`}
                                                         onClick={() => handleOpenProjectFinder(project)}
                                                         className="flex flex-col items-center justify-center w-full h-full rounded-md"

@@ -14,8 +14,8 @@ const Navbar = () => {
                 <ul>
                     { navLinks.map(({ id , name, type}) => (
                         <li key={id}>
-                            <button
-                                type="button"
+                            <button type="button"
+
                                 aria-label={`Open ${name}`}
                                 onClick={() => openWindow(type)}
                                 className="w-full h-full text-left rounded"
@@ -31,8 +31,8 @@ const Navbar = () => {
                 <ul>
                     { navIcons.map(({ id, img}) => (
                         <li key={id}>
-                            <button
-                                type="button"
+                            <button type="button"
+
                                 aria-label={`Navbar icon ${id}`}
                                 className="rounded"
                             >
