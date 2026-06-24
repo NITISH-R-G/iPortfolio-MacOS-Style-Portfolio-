@@ -12,26 +12,26 @@
 
 ## Priority Improvements
 1. Ensure all new components use semantic HTML.
-2. Evaluate memory usage for loaded images and windows.
+2. Explicitly declare `type="button"` on generic buttons to prevent unintended form submissions.
 3. Consistently apply focus styles globally rather than locally if applicable.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Improve accessibility by ensuring buttons have explicitly declared `type="button"` attributes.
 * **Tasks**:
-  - Evaluate image rendering code and consider standardizing asset serving.
-  - Implement dynamic imports for remaining non-critical JS.
-  - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+  - Update Safari component to add explicit button types.
+  - Update Resume component to add explicit button types on pagination controls.
+  - Update Contact component to add explicit button types on copy email controls.
+* **Implementation Roadmap**: 1. Audit generic button elements. 2. Implement `type="button"`.
+* **Expected Outcomes**: Stronger frontend accessibility and safer component lifecycle semantics.
 
 ## Technical Improvements
-* **Architecture**: Enforced consistent focus state handling across more components.
-* **Performance**: Maintained optimal asset loading strategies.
-* **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
-* **Security**: N/A for this cycle.
+* **Architecture**: Enforced standard semantic rules across generic UI buttons.
+* **Performance**: Maintained optimal asset loading strategies using `loading="lazy"`.
+* **Scalability**: Standardizing accessibility attributes creates a more maintainable pattern for new windows.
+* **Security**: Enforcing button types prevents unintended submit actions in potential future form nesting.
 * **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
 * **Documentation**: Updated `report.md` with continuous improvement metrics.
 * **DevOps**: Relied on established CI.
 
 ## Metrics Improved
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Code quality gains**: Stronger semantic HTML ensures generic buttons won't inadvertently trigger unintended browser events. Keyboard interactions are safer, conforming better to best practices.
