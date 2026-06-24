@@ -1,37 +1,39 @@
 ## Repository Health Report
 * **Strengths**: Solid and responsive macOS UI simulation. Good modular architecture using React 19, GSAP for smooth animations, and Zustand for state. CI is enabled. Tests are running.
-* **Weaknesses**: Missing deeper accessibility (A11Y) attributes and focus visibility on interactive elements. Sub-optimal frontend asset loading strategies (e.g., lack of lazy loading on off-screen images).
-* **Risks**: Continued asset growth could increase bundle sizes and affect time-to-interactive (TTI) and Largest Contentful Paint (LCP) if not lazily loaded or optimized. Missing semantic tags or visual focus indicators could result in poor user experience for keyboard and screen reader users.
-* **Opportunities**: Optimize images via lazy loading attribute. Enhance a11y compliance for all links and buttons, starting with window content.
+* **Weaknesses**: Some interactive components lacked explicit `type="button"`, increasing the risk of unintended form submissions. Inconsistent usage of lazy loading for images could negatively impact performance on low-end devices.
+* **Risks**: Continued asset growth without standard `loading="lazy"` practices could affect time-to-interactive (TTI) and Largest Contentful Paint (LCP). Accessibility bugs could occur if semantic button declarations are omitted.
+* **Opportunities**: Ensure all generic `<button>` elements explicitly state `type="button"`. Apply `loading="lazy"` universally across all `<img>` elements.
 
 ## Competitor Analysis
 * **Repositories analyzed**: open source macOS clones, personal portfolios (e.g., macos-web, portfolio-macos).
 * **Advantages discovered**: High interactivity. Good use of modular state variables allowing independent window control.
-* **Gaps identified**: Missing comprehensive accessibility (A11Y) layers natively seen in competitor frameworks. Asset loading isn't fully optimized out of the box.
-* **Opportunities to outperform**: Improve Lighthouse scores by strictly enforcing `loading="lazy"` on image assets, leading to better mobile and desktop performance than pure React OS clones. Implementing native-feeling A11Y features ensures higher overall usability.
+* **Gaps identified**: Missing comprehensive accessibility (A11Y) and structural best practices seen in mature competitor frameworks. Inconsistent application of lazy loading and explicit element typing.
+* **Opportunities to outperform**: Improve Lighthouse scores by strictly enforcing `loading="lazy"` on image assets, leading to better mobile and desktop performance. Enforcing strict semantic definitions like `type="button"` ensures a safer, more predictable UI.
 
 ## Priority Improvements
-1. Ensure all new components use semantic HTML.
-2. Evaluate memory usage for loaded images and windows.
-3. Consistently apply focus styles globally rather than locally if applicable.
+1. Enforce strict `type="button"` on all generic buttons to prevent form-related bugs.
+2. Standardize image optimization by ensuring every `<img>` uses `loading="lazy"`.
+3. Continuously audit and enforce accessibility and HTML semantics.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Improve frontend performance and UI predictability by applying lazy loading to images and specifying button types.
 * **Tasks**:
-  - Evaluate image rendering code and consider standardizing asset serving.
-  - Implement dynamic imports for remaining non-critical JS.
-  - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+  - Audit the codebase for generic `<button>` elements missing `type="button"`.
+  - Add `type="button"` to all identified buttons.
+  - Audit the codebase for `<img>` elements missing `loading="lazy"`.
+  - Add `loading="lazy"` to all identified images.
+* **Implementation Roadmap**: 1. Execute global search-and-replace to patch button and image elements. 2. Verify UI integrity and component behavior.
+* **Expected Outcomes**: Faster TTI (Time to Interactive), reduced unnecessary network payloads on load, and prevention of unexpected form submissions.
 
 ## Technical Improvements
-* **Architecture**: Enforced consistent focus state handling across more components.
-* **Performance**: Maintained optimal asset loading strategies.
-* **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
-* **Security**: N/A for this cycle.
-* **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
-* **Documentation**: Updated `report.md` with continuous improvement metrics.
+* **Architecture**: Ensured explicit semantic types on interactive elements (`type="button"`).
+* **Performance**: Enforced lazy loading (`loading="lazy"`) across all non-critical images to optimize asset rendering and network usage.
+* **Scalability**: Establishing these coding standards makes future UI development more robust and predictable.
+* **Security**: Mitigated minor risks associated with unintended form data submission by generic buttons.
+* **Testing**: Maintained current test suite stability.
+* **Documentation**: Updated `report.md` with the latest continuous improvement cycle metrics.
 * **DevOps**: Relied on established CI.
 
 ## Metrics Improved
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Performance gains**: Applied lazy loading to offscreen image assets, reducing initial load footprint.
+* **Code quality gains**: All UI buttons now have explicitly defined `type` attributes, ensuring compliance with semantic HTML standards.
