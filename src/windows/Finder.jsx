@@ -28,8 +28,8 @@ const Finder = () => {
             <ul>
                 {items.map((item) => (
                     <li key={item.id} className="w-full">
-                        <button
-                            type="button"
+                        <button type="button"
+
                             onClick={() => setActiveLocation(item)}
                             className={clsx(
                                 "flex items-center gap-2 px-3 py-2 w-full rounded-md cursor-pointer transition-colors",
@@ -64,8 +64,8 @@ const Finder = () => {
                 <ul className="content">
                     {activeLocation?.children?.map((item) => (
                         <li key={item.id} className={item.position}>
-                            <button
-                                type="button"
+                            <button type="button"
+
                                 onClick={() => openItem(item)}
                                 className="flex items-center flex-col gap-3 rounded-md p-1 group"
                                 aria-label={`Open ${item.name}`}
