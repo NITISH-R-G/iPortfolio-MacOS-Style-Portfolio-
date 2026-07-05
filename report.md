@@ -1,7 +1,7 @@
 ## Repository Health Report
 * **Strengths**: Solid and responsive macOS UI simulation. Good modular architecture using React 19, GSAP for smooth animations, and Zustand for state. CI is enabled. Tests are running.
-* **Weaknesses**: Missing deeper accessibility (A11Y) attributes and focus visibility on interactive elements. Sub-optimal frontend asset loading strategies (e.g., lack of lazy loading on off-screen images).
-* **Risks**: Continued asset growth could increase bundle sizes and affect time-to-interactive (TTI) and Largest Contentful Paint (LCP) if not lazily loaded or optimized. Missing semantic tags or visual focus indicators could result in poor user experience for keyboard and screen reader users.
+* **Weaknesses**: Some missing generic button `type="button"` attributes causing potential unintended form submissions.
+* **Risks**: Missing semantic tags such as explicit button types could result in unintended behaviors in forms or generic keyboard interaction bugs.
 * **Opportunities**: Optimize images via lazy loading attribute. Enhance a11y compliance for all links and buttons, starting with window content.
 
 ## Competitor Analysis
@@ -25,13 +25,13 @@
 * **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
 
 ## Technical Improvements
-* **Architecture**: Enforced consistent focus state handling across more components.
+* **Architecture**: Enforced clean HTML semantics by explicitly adding `type="button"` to generic buttons across Safari, Resume, and Contact windows.
 * **Performance**: Maintained optimal asset loading strategies.
-* **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
+* **Scalability**: Standardizing explicit button types creates a more maintainable pattern for new windows.
 * **Security**: N/A for this cycle.
 * **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
 * **Documentation**: Updated `report.md` with continuous improvement metrics.
 * **DevOps**: Relied on established CI.
 
 ## Metrics Improved
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Code quality gains**: Added `type="button"` attribute to generic buttons in `Safari`, `Resume`, and `Contact` windows, preventing accidental form submissions and improving semantic HTML compliance. Focus indicators continue to ensure that keyboard interactions conform to WCAG guidelines.
