@@ -11,27 +11,26 @@
 * **Opportunities to outperform**: Improve Lighthouse scores by strictly enforcing `loading="lazy"` on image assets, leading to better mobile and desktop performance than pure React OS clones. Implementing native-feeling A11Y features ensures higher overall usability.
 
 ## Priority Improvements
-1. Ensure all new components use semantic HTML.
+1. Ensure all new components use semantic HTML, including explicit `type="button"` on generic buttons to prevent unintended form submissions.
 2. Evaluate memory usage for loaded images and windows.
 3. Consistently apply focus styles globally rather than locally if applicable.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Enhance accessibility (A11Y) and prevent form submission bugs on interactive elements.
 * **Tasks**:
-  - Evaluate image rendering code and consider standardizing asset serving.
-  - Implement dynamic imports for remaining non-critical JS.
-  - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+  - Audit all `<button>` elements for missing `type="button"` attributes.
+  - Add explicit `type="button"` to buttons across generic UI components (Safari, Navigation, Window Controls, Finder, etc.).
+* **Implementation Roadmap**: 1. Search for generic `<button>` instances without a type. 2. Enforce explicit `type="button"`.
+* **Expected Outcomes**: Prevention of unintended form submissions and enhanced strict A11Y compliance.
 
 ## Technical Improvements
-* **Architecture**: Enforced consistent focus state handling across more components.
+* **Architecture**: Enforced explicit `type="button"` declarations across all interactive `<button>` elements to prevent implicit form submission actions and standardize component architecture.
 * **Performance**: Maintained optimal asset loading strategies.
-* **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
-* **Security**: N/A for this cycle.
+* **Scalability**: Standardizing HTML semantics creates a more robust foundation for new interactive components.
+* **Security**: Prevented potential implicit form submission vulnerabilities across UI controls.
 * **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
 * **Documentation**: Updated `report.md` with continuous improvement metrics.
 * **DevOps**: Relied on established CI.
 
 ## Metrics Improved
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements. All generic `<button>` elements are now strictly typed (`type="button"`), reducing edge cases with nested forms and improving semantic correctness.
