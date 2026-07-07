@@ -32,13 +32,16 @@ const { chromium } = require('playwright');
 
         // Take a screenshot of the whole page showing the opened windows
         await page.screenshot({ path: 'frontend_verification.png' });
+        // eslint-disable-next-line no-undef
         console.log("Screenshot saved to frontend_verification.png");
 
     } catch (e) {
+        // eslint-disable-next-line no-undef
         console.error("Test error:", e);
     } finally {
         await context.close();
         await browser.close();
+        // eslint-disable-next-line no-undef
         console.log("Video saved to videos/ directory.");
     }
 })();
