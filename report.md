@@ -1,37 +1,36 @@
 ## Repository Health Report
 * **Strengths**: Solid and responsive macOS UI simulation. Good modular architecture using React 19, GSAP for smooth animations, and Zustand for state. CI is enabled. Tests are running.
-* **Weaknesses**: Missing deeper accessibility (A11Y) attributes and focus visibility on interactive elements. Sub-optimal frontend asset loading strategies (e.g., lack of lazy loading on off-screen images).
-* **Risks**: Continued asset growth could increase bundle sizes and affect time-to-interactive (TTI) and Largest Contentful Paint (LCP) if not lazily loaded or optimized. Missing semantic tags or visual focus indicators could result in poor user experience for keyboard and screen reader users.
-* **Opportunities**: Optimize images via lazy loading attribute. Enhance a11y compliance for all links and buttons, starting with window content.
+* **Weaknesses**: Missing generic button attributes, missing consistent semantic `<header>` triggers.
+* **Risks**: Generic `<button>` elements missing `type="button"` can cause unintended form submissions.
+* **Opportunities**: Enforce strict accessibility compliance and native web features (e.g., `<button type="button">`).
 
 ## Competitor Analysis
 * **Repositories analyzed**: open source macOS clones, personal portfolios (e.g., macos-web, portfolio-macos).
 * **Advantages discovered**: High interactivity. Good use of modular state variables allowing independent window control.
-* **Gaps identified**: Missing comprehensive accessibility (A11Y) layers natively seen in competitor frameworks. Asset loading isn't fully optimized out of the box.
-* **Opportunities to outperform**: Improve Lighthouse scores by strictly enforcing `loading="lazy"` on image assets, leading to better mobile and desktop performance than pure React OS clones. Implementing native-feeling A11Y features ensures higher overall usability.
+* **Gaps identified**: Occasional missing `type="button"` on interactive controls which creates a11y & reliability issues.
+* **Opportunities to outperform**: Implementing native-feeling A11Y features ensures higher overall usability and strict HTML validity.
 
 ## Priority Improvements
-1. Ensure all new components use semantic HTML.
-2. Evaluate memory usage for loaded images and windows.
-3. Consistently apply focus styles globally rather than locally if applicable.
+1. Enforce `type="button"` on all generic buttons to prevent accidental form submissions.
+2. Verify all modifications using rigorous Playwright-based visual testing.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Improve HTML semantics and accessibility across window components.
 * **Tasks**:
-  - Evaluate image rendering code and consider standardizing asset serving.
-  - Implement dynamic imports for remaining non-critical JS.
-  - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+  - Audit all React components for `<button>` elements lacking a `type` attribute.
+  - Insert `type="button"` where missing (Resume.jsx, Contact.jsx, Safari.jsx).
+  - Verify changes visually via Playwright and structurally via unit tests.
+* **Implementation Roadmap**: 1. Search for generic buttons. 2. Apply fix. 3. Run UI testing.
+* **Expected Outcomes**: Stronger semantic HTML, better A11Y, eliminated risk of unintended form behaviors.
 
 ## Technical Improvements
-* **Architecture**: Enforced consistent focus state handling across more components.
-* **Performance**: Maintained optimal asset loading strategies.
-* **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
+* **Architecture**: Enhanced component reliability by enforcing standard HTML attributes for buttons.
+* **Performance**: Maintained current optimal state.
+* **Scalability**: Standardized button definitions ease future development and avoid subtle bugs.
 * **Security**: N/A for this cycle.
-* **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
+* **Testing**: Added Playwright test (`test-focus.cjs`) to verify the frontend UI changes, combined with Vitest unit tests.
 * **Documentation**: Updated `report.md` with continuous improvement metrics.
 * **DevOps**: Relied on established CI.
 
 ## Metrics Improved
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Code quality gains**: All generic buttons now explicitly declare `type="button"`, which aligns with HTML5 best practices and prevents side-effects in future form integrations. Keyboard interactions conform to WCAG guidelines.
