@@ -47,6 +47,7 @@ const Resume = () => {
                     {/* Page Navigation Controls */}
                     <div className="flex items-center gap-1 bg-white rounded px-2 py-0.5 border border-gray-300 shadow-sm">
                         <button
+                            type="button"
                             disabled={pageNumber <= 1}
                             onClick={previousPage}
                             aria-label="Previous Page"
@@ -60,6 +61,7 @@ const Resume = () => {
                         </span>
 
                         <button
+                            type="button"
                             disabled={pageNumber >= numPages}
                             onClick={nextPage}
                             aria-label="Next Page"

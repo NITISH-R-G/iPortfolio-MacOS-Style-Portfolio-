@@ -12,17 +12,15 @@
 
 ## Priority Improvements
 1. Ensure all new components use semantic HTML.
-2. Evaluate memory usage for loaded images and windows.
-3. Consistently apply focus styles globally rather than locally if applicable.
+2. Ensure generic buttons specify `type="button"` for better accessibility and prevent unintended form submissions.
+3. Evaluate memory usage for loaded images and windows.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Improve accessibility across components.
 * **Tasks**:
-  - Evaluate image rendering code and consider standardizing asset serving.
-  - Implement dynamic imports for remaining non-critical JS.
-  - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+  - Add `type="button"` to buttons that do not have them in `Safari.jsx`, `Resume.jsx`, and `Contact.jsx`.
+* **Implementation Roadmap**: 1. Audit files for generic buttons missing type. 2. Add `type="button"`.
+* **Expected Outcomes**: Improved accessibility for screen readers and avoiding default submit behavior for generic buttons.
 
 ## Technical Improvements
 * **Architecture**: Enforced consistent focus state handling across more components.
