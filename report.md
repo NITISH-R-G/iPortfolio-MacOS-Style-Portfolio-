@@ -25,13 +25,13 @@
 * **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
 
 ## Technical Improvements
-* **Architecture**: Enforced consistent focus state handling across more components.
+* **Architecture**: Enforced consistent focus state handling across more components. Explicitly added `type="button"` to `<button>` elements to enforce semantic HTML constraints and avoid unintentional form submissions.
 * **Performance**: Maintained optimal asset loading strategies.
 * **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
-* **Security**: N/A for this cycle.
-* **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
+* **Security**: Enforced strict button typing (`type="button"`) to prevent potential side-effects on form wrapping.
+* **Testing**: Maintained current test suite stability (`npm run test` successfully completed) and visually verified UI via Playwright (`verify_ui.cjs`).
 * **Documentation**: Updated `report.md` with continuous improvement metrics.
 * **DevOps**: Relied on established CI.
 
 ## Metrics Improved
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience. Addressed 9 specific instances of generic buttons lacking the `type="button"` attribute across `Safari.jsx`, `Resume.jsx`, and `Contact.jsx`, directly improving baseline HTML semantics and accessibility (A11Y) metrics.
