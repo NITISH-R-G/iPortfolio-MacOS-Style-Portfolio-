@@ -15,11 +15,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          react: ['react', 'react-dom'],
-          gsap: ['gsap', '@gsap/react'],
-          pdf: ['react-pdf'],
-          zustand: ['zustand', 'immer']
+        manualChunks(id) {
+          if (id.includes('/react-dom/')) return 'react';
+          if (id.includes('/react/')) return 'react';
+          if (id.includes('/gsap/') || id.includes('/@gsap/')) return 'gsap';
+          if (id.includes('/react-pdf/')) return 'pdf';
+          if (id.includes('/zustand/') || id.includes('/immer/')) return 'zustand';
         }
       }
     }
