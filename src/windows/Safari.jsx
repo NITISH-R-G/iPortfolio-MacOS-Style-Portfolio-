@@ -243,16 +243,14 @@ const Safari = () => {
 
                                         {/* Navigation Buttons */}
                                         <div className="flex gap-2">
-                                            <button
-                                                type="button"
+                                            <button type="button"
                                                 onClick={() => scroll('left')}
                                                 className="p-1.5 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 text-gray-600 transition-all active:scale-95"
                                                 aria-label="Scroll left"
                                             >
                                                 <ArrowLeft size={14} />
                                             </button>
-                                            <button
-                                                type="button"
+                                            <button type="button"
                                                 onClick={() => scroll('right')}
                                                 className="p-1.5 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 text-gray-600 transition-all active:scale-95"
                                                 aria-label="Scroll right"
