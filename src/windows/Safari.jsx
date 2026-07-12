@@ -15,7 +15,7 @@ const Safari = () => {
             id: 1,
             title: "LinkedIn | Nitish R.G.",
             domain: "linkedin.com",
-            url: "linkedin.com/in/nitish-rg",
+            url: "linkedin.com/in/nitish-r-g-15-10-2007-rgn",
             type: "linkedin",
             icon: Linkedin,
             color: "text-[#0A66C2]",
@@ -28,28 +28,15 @@ const Safari = () => {
         },
         {
             id: 2,
-            title: "GitHub @nitish-rg",
+            title: "GitHub @NITISH-R-G",
             domain: "github.com",
-            url: "github.com/nitish-rg",
-            link: "https://github.com/nitish-rg",
+            url: "github.com/NITISH-R-G",
+            link: "https://github.com/NITISH-R-G",
             type: "other",
             icon: Github,
             color: "text-[#1F2328]",
             bg: "bg-[#1F2328]/10",
             description: "Check out my repositories and code.",
-            embeds: []
-        },
-        {
-            id: 3,
-            title: "Instagram",
-            domain: "instagram.com",
-            url: "instagram.com/nitish.rg",
-            link: "https://instagram.com/nitish.rg",
-            type: "other",
-            icon: Instagram,
-            color: "text-[#E1306C]",
-            bg: "bg-[#E1306C]/10",
-            description: "Follow my visual journey.",
             embeds: []
         }
     ]);

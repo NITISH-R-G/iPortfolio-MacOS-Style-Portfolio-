@@ -1,0 +1,107 @@
+- Branch: origin/a11y-and-performance-improvements-8493728019793953937
+  SHA: 291cf09a3c30067b71fe81d8352b4eb611f095c6
+  Author: NITISH-R-G
+  Date: 2026-05-21 21:58:34 +0000
+  Reason: Fully merged, unprotected, inactive for 51 days
+
+- Branch: origin/accessibility-and-linting-3629837298945375825
+  SHA: dd62c4cd3a63a66a8637624d08fd390b1ab0ae3e
+  Author: NITISH-R-G
+  Date: 2026-05-31 22:07:35 +0000
+  Reason: Fully merged, unprotected, inactive for 41 days
+
+- Branch: origin/chore-accessibility-coverage-10898640658912445231
+  SHA: 1c0403d2467b6b3abd46873ab7581d184cb03f95
+  Author: NITISH-R-G
+  Date: 2026-06-02 21:52:02 +0000
+  Reason: Fully merged, unprotected, inactive for 39 days
+
+- Branch: origin/chore/add-ci-and-testing-2742488789739054146
+  SHA: 8b00ccc04e0326c60b2a3083382a4bf9ee5e65e4
+  Author: NITISH-R-G
+  Date: 2026-05-26 22:03:23 +0000
+  Reason: Fully merged, unprotected, inactive for 46 days
+
+- Branch: origin/continuous-improvement-performance-a11y-533034360575132873
+  SHA: cb5f6fdf1e8ed69d7dabc76c20fa06b4b0148798
+  Author: NITISH-R-G
+  Date: 2026-06-05 22:03:11 +0000
+  Reason: Fully merged, unprotected, inactive for 36 days
+
+- Branch: origin/feat/autonomous-repo-system-4492502312933958458
+  SHA: b8662bfd87a202b91d92418f43e8121f32e50d5c
+  Author: google-labs-jules[bot]
+  Date: 2026-06-06 09:23:27 +0000
+  Reason: Fully merged, unprotected, inactive for 36 days
+
+- Branch: origin/feat/dock
+  SHA: 66a7cc435c27989300a001f6230adc0decc8c3e2
+  Author: NITISH-R-G
+  Date: 2025-12-01 00:13:38 +0530
+  Reason: Fully merged, unprotected, inactive for 223 days
+
+- Branch: origin/feat/welcome
+  SHA: f6d87f485002184b488c9cbdddfe993eeea4d5c7
+  Author: NITISH-R-G
+  Date: 2025-11-30 19:58:13 +0530
+  Reason: Fully merged, unprotected, inactive for 224 days
+
+- Branch: origin/feat/window-wrapper
+  SHA: 197aafab6b721ce6453d9325c9418b10ae335417
+  Author: NITISH-R-G
+  Date: 2025-12-03 00:39:53 +0530
+  Reason: Fully merged, unprotected, inactive for 221 days
+
+- Branch: origin/feature/a11y-focus-indicators-4139397885923293915
+  SHA: c39d6fb003f9cbb18041033266bc709f9f4ae59a
+  Author: NITISH-R-G
+  Date: 2026-06-07 21:47:46 +0000
+  Reason: Fully merged, unprotected, inactive for 34 days
+
+- Branch: origin/feature/accessibility-improvements-11422478374843268761
+  SHA: bfd1e0d6bf3555ecb5367345815e8f75c6d8348f
+  Author: NITISH-R-G
+  Date: 2026-06-06 22:14:19 +0000
+  Reason: Fully merged, unprotected, inactive for 35 days
+
+- Branch: origin/fix-accessibility-and-error-boundary-9532972987044316776
+  SHA: b505c15095cd167725ddc0cff63e8429850a0015
+  Author: NITISH-R-G
+  Date: 2026-05-25 22:07:04 +0000
+  Reason: Fully merged, unprotected, inactive for 47 days
+
+- Branch: origin/fix-lint-and-vite-chunks-13562233127895416314
+  SHA: e89f2ef63c1c25949ce564a2e19b4751260f0ce5
+  Author: NITISH-R-G
+  Date: 2026-05-20 22:10:01 +0000
+  Reason: Fully merged, unprotected, inactive for 52 days
+
+- Branch: origin/fix-window-drag-accessibility-17680805549141798200
+  SHA: f8317034a69fb34a4d4374e27d09c3c41bed6793
+  Author: NITISH-R-G
+  Date: 2026-06-01 22:04:14 +0000
+  Reason: Fully merged, unprotected, inactive for 40 days
+
+- Branch: origin/improve-a11y-performance-and-error-handling-14172146423922449354
+  SHA: b04a0973ed97a7ddedce848d7e46823b800ae940
+  Author: NITISH-R-G
+  Date: 2026-06-04 22:02:44 +0000
+  Reason: Fully merged, unprotected, inactive for 37 days
+
+- Branch: origin/improve-finder-a11y-seo-tests-3570471217529333202
+  SHA: 1798f6d44cb5059c705d63c2a9220a10f1262ab5
+  Author: NITISH-R-G
+  Date: 2026-05-28 22:05:35 +0000
+  Reason: Fully merged, unprotected, inactive for 44 days
+
+- Branch: origin/refactor/finder-unused-import-15480724478572739553
+  SHA: 6f2a81999bcb7c09fcc9ddd20ef45cb06a6eb50b
+  Author: NITISH-R-G
+  Date: 2026-06-03 21:43:10 +0000
+  Reason: Fully merged, unprotected, inactive for 38 days
+
+- Branch: origin/ui-ux-semantic-improvements-5202271763288343576
+  SHA: b5de9511d5c732a7b08796a3b83627d2b55432ed
+  Author: NITISH-R-G
+  Date: 2026-05-29 21:58:56 +0000
+  Reason: Fully merged, unprotected, inactive for 43 days

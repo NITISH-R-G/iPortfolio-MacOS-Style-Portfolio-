@@ -74,85 +74,36 @@ const dockApps = [
     },
 ];
 
-const blogPosts = [
-    {
-        id: 1,
-        date: "Sep 2, 2025",
-        title:
-            "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-        image: "/images/blog1.png",
-        link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
-    },
-    {
-        id: 2,
-        date: "Aug 28, 2025",
-        title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-        image: "/images/blog2.png",
-        link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
-    },
-    {
-        id: 3,
-        date: "Aug 15, 2025",
-        title: "The Ultimate Guide to Mastering GSAP Animations",
-        image: "/images/blog3.png",
-        link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
-    },
-];
+const blogPosts = [];
 
- const techStack = [
+const techStack = [
      {
          category: "Languages",
-         items: ["Python", "JavaScript", "SQL/MySQL", "C/C++", "Java (Basic)"],
+         items: ["Python", "TypeScript", "JavaScript", "C", "C++", "SQL", "Dart", "C#", "Java (Basic)", "HTML5/CSS3"],
+     },
+     {
+         category: "Algorithms & Design",
+         items: ["Data Structures", "OOP", "Design Patterns", "SOLID Principles", "Encapsulation", "Polymorphism"],
+     },
+     {
+         category: "AI & Machine Learning",
+         items: ["TensorFlow", "Keras", "scikit-learn", "LangChain", "Claude", "OpenAI API", "RAG Pipelines", "Prompt Engineering"],
+     },
+     {
+         category: "Backend & APIs",
+         items: ["FastAPI", "Flask", "Node.js", "REST APIs", "Microservices", "PostgreSQL", "MySQL", "SQLite", "Authentication"],
      },
      {
          category: "Frontend",
-         items: ["HTML5", "CSS3", "JavaScript", "React.js", "Vite"],
-     },
-     {
-         category: "Styling & UI",
-         items: ["CSS", "Responsive Design", "Basic UX Practices", "GSAP"],
-     },
-     {
-         category: "Backend",
-         items: [
-             "Node.js",
-             "REST APIs",
-             "FastAPI",
-             "Flask",
-             "Microservices",
-             "Authentication",
-             "Pagination",
-         ],
-     },
-     {
-         category: "Databases",
-         items: [
-             "MySQL",
-             "PostgreSQL",
-             "Schema Design",
-             "Indexing",
-             "Query Optimization",
-         ],
-     },
-     {
-         category: "AI & Data",
-         items: [
-             "TensorFlow",
-             "scikit-learn",
-             "Pandas",
-             "NumPy",
-             "EDA",
-             "Model Evaluation",
-             "ML-backed APIs",
-         ],
+         items: ["React", "Vite", "GSAP", "Flutter", "Responsive Design", "Vanilla JS SPA"],
      },
      {
          category: "Cloud & DevOps",
-         items: ["AWS", "Oracle Cloud", "Docker", "Git", "GitHub"],
+         items: ["AWS", "Google Cloud", "Oracle Cloud", "Docker", "Git", "GitHub Actions", "CI/CD"],
      },
      {
-         category: "Testing & QA",
-         items: ["AI Model Evaluation", "Edge Case Testing", "Feedback Loops"],
+         category: "Engineering Practices",
+         items: ["Agile", "TDD", "Code Review", "Version Control", "Specification-Driven Development"],
      },
  ];
 
@@ -160,31 +111,17 @@ const blogPosts = [
 const socials = [
     {
         id: 1,
-        text: "Github",
+        text: "GitHub",
         icon: "/icons/github.svg",
         bg: "#f4656b",
         link: "https://github.com/NITISH-R-G",
     },
     {
         id: 2,
-        text: "Instagram",
-        icon: "/icons/instagram.svg",
-        bg: "#4bcb63",
-        link: "https://jsmastery.com/",
-    },
-    {
-        id: 3,
-        text: "Twitter/X",
-        icon: "/icons/twitter.svg",
-        bg: "#ff866b",
-        link: "https://x.com/jsmasterypro",
-    },
-    {
-        id: 4,
         text: "LinkedIn",
         icon: "/icons/linkedin.svg",
         bg: "#05b6f6",
-        link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+        link: "https://www.linkedin.com/in/nitish-r-g-15-10-2007-rgn",
     },
 ];
 
@@ -216,24 +153,7 @@ const photosLinks = [
     },
 ];
 
-const gallery = [
-    {
-        id: 1,
-        img: "/images/gal1.png",
-    },
-    {
-        id: 2,
-        img: "/images/gal2.png",
-    },
-    {
-        id: 3,
-        img: "/images/gal3.png",
-    },
-    {
-        id: 4,
-        img: "/images/gal4.png",
-    },
-];
+const gallery = [];
 
 export {
     navLinks,
@@ -253,60 +173,132 @@ const WORK_LOCATION = {
     icon: "/icons/work.svg",
     kind: "folder",
     children: [
-        // ▶ Project 1
         {
             id: 5,
             name: "Projects",
             icon: "/images/folder.png",
             kind: "folder",
-            position: "top-10 left-5", // icon position inside Finder
-            windowPosition: "top-[5vh] left-5", // optional: Finder window position
+            position: "top-10 left-5",
+            windowPosition: "top-[5vh] left-5",
             children: [
                 {
                     id: 1,
-                    name: "Nike Project.txt",
+                    name: "CODESTREAK",
                     icon: "/images/txt.png",
                     kind: "file",
                     fileType: "txt",
                     position: "top-5 left-10",
                     description: [
-                        "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
-                        "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
-                        "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
-                        "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
+                        "I founded CODESTREAK, a platform serving 7,000+ students globally. It empowers learners to crack top-tier technical interviews.",
+                        "It offers 700+ interactive coding problems curated for FAANG and high-growth startups, along with high-quality tech resources.",
+                        "Built using modern scalable architectures with CI/CD deployment pipelines."
                     ],
                 },
                 {
                     id: 2,
-                    name: "nike.com",
-                    icon: "/images/safari.png",
+                    name: "Intelli-Credit",
+                    icon: "/images/txt.png",
                     kind: "file",
-                    fileType: "url",
-                    href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
+                    fileType: "txt",
                     position: "top-10 right-20",
+                    description: [
+                        "An intelligent credit profiling system leveraging federated learning.",
+                        "Trained a Random Forest model on banking data while preserving privacy through PySyft, achieving 92.5% accuracy.",
+                        "Built a secure backend API using Flask to enable real-time risk assessments."
+                    ]
+                },
+                {
+                    id: 3,
+                    name: "discourse-rag-assistant",
+                    icon: "/images/txt.png",
+                    kind: "file",
+                    fileType: "txt",
+                    position: "top-32 left-32",
+                    description: [
+                        "A context-aware Q&A assistant built for the Discourse forum.",
+                        "Ingests forum topics and replies using the Discourse API and vectorizes them for semantic search.",
+                        "Employs LangChain and a Large Language Model to answer user queries with precise context from the community."
+                    ]
                 },
                 {
                     id: 4,
-                    name: "nike.png",
-                    icon: "/images/image.png",
+                    name: "RAVEN",
+                    icon: "/images/txt.png",
                     kind: "file",
-                    fileType: "img",
+                    fileType: "txt",
                     position: "top-52 right-80",
-                    imageUrl: "/images/project-1.png",
+                    description: [
+                        "Relational Verification Engine (RAVEN) — An autonomous AI agent designed for advanced coding tasks.",
+                        "This project propelled me to rank #73 globally in the HackerRank Orchestrate competition.",
+                        "It leverages sophisticated planning, research tools, and iterative refinement to write and debug code autonomously."
+                    ]
                 },
                 {
                     id: 5,
-                    name: "Design.fig",
-                    icon: "/images/plain.png",
+                    name: "RoadSOS",
+                    icon: "/images/txt.png",
                     kind: "file",
-                    fileType: "fig",
-                    href: "https://google.com",
+                    fileType: "txt",
                     position: "top-60 right-20",
+                    description: [
+                        "An emergency response system designed to improve accident management.",
+                        "Uses live location tracking and automated distress signals to alert nearby medical facilities and emergency contacts instantly.",
+                        "Aims to reduce critical response time during severe road accidents."
+                    ]
+                },
+                {
+                    id: 6,
+                    name: "clicky",
+                    icon: "/images/txt.png",
+                    kind: "file",
+                    fileType: "txt",
+                    position: "bottom-10 left-10",
+                    description: [
+                        "A cross-platform Python GUI automation tool, functioning as a seamless Windows port of Clicky.",
+                        "Integrates keyboard and mouse automation seamlessly across different operating systems."
+                    ]
+                },
+                {
+                    id: 7,
+                    name: "Multi-Domain-Support-Triage",
+                    icon: "/images/txt.png",
+                    kind: "file",
+                    fileType: "txt",
+                    position: "bottom-10 right-20",
+                    description: [
+                        "A robust classification model utilizing Natural Language Processing (NLP).",
+                        "Automates customer support triage by accurately categorizing incoming tickets across multiple domains.",
+                        "Improves response times and significantly optimizes customer service operations."
+                    ]
+                },
+                {
+                    id: 8,
+                    name: "FACE-EMOTION-DETECTION",
+                    icon: "/images/txt.png",
+                    kind: "file",
+                    fileType: "txt",
+                    position: "bottom-32 left-32",
+                    description: [
+                        "A sophisticated real-time face emotion detection model.",
+                        "Trained using TensorFlow and Keras on a dataset of 30,000+ images.",
+                        "Recognizes human emotions instantly with high accuracy, making it ideal for interactive applications."
+                    ]
+                },
+                {
+                    id: 9,
+                    name: "RailATC",
+                    icon: "/images/txt.png",
+                    kind: "file",
+                    fileType: "txt",
+                    position: "bottom-52 right-40",
+                    description: [
+                        "An innovative automated ticketing app designed for railway systems.",
+                        "Built from the ground up using C and SQL.",
+                        "Handles complex ticket booking, cancellation, and transaction logging securely and efficiently."
+                    ]
                 },
             ],
         },
-
-
     ],
 };
 
@@ -324,25 +316,7 @@ const ABOUT_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "top-10 left-5",
-            imageUrl: "/images/adrian.jpg",
-        },
-        {
-            id: 2,
-            name: "casual-me.png",
-            icon: "/images/image.png",
-            kind: "file",
-            fileType: "img",
-            position: "top-28 right-72",
             imageUrl: "/images/nitish2.jpg",
-        },
-        {
-            id: 3,
-            name: "conference-me.png",
-            icon: "/images/image.png",
-            kind: "file",
-            fileType: "img",
-            position: "top-52 left-80",
-            imageUrl: "/images/adrian-3.jpeg",
         },
         {
             id: 4,
@@ -351,13 +325,20 @@ const ABOUT_LOCATION = {
             kind: "file",
             fileType: "txt",
             position: "top-60 left-5",
-            subtitle: "Engineer, Data Scientist, & Creative Builder",
-            image: "/images/nitish.jpg",
+            subtitle: "Software Engineering Student & AI Developer",
+            image: "/images/nitish2.jpg",
             description: [
-                "Hey! I’m Nitish 👋, a developer who loves blending Artificial Intelligence with stunning web experiences.",
-                "I bridge the gap between Data Science and Design—specializing in Python and AI backends while crafting interactive UIs with React, Vite, and GSAP.",
-                "I’m all about scalable systems and clean code. Whether it's optimizing database queries by 30% or fine-tuning a machine learning model, I build solutions that are smart and efficient.",
-                "Off-screen, you’ll find me designing graphics for the Media Guild, leading student communities, or figuring out how to balance two engineering degrees without losing my sanity 😅."
+                "Hey! I'm Nitish R. G., a software engineering student at IIT Madras (B.S. Data Science) and Sri Shakthi Institute of Engineering and Technology (B.E. Computer Science).",
+                "I specialize in building intelligent AI systems, data-driven applications, and robust backends.",
+                "EXPERIENCE & LEADERSHIP:",
+                "I am the Founder of CODESTREAK, an educational platform that serves over 7,000 students globally, preparing them for technical interviews.",
+                "Previously, I worked as an AI/Data Intern at Infosys Springboard where I deployed AI applications, and a Data Scientist Intern at EVOASTRA Ventures.",
+                "I also lead my college's School Innovation Council, organizing tech events and fostering a community of problem solvers.",
+                "ACHIEVEMENTS:",
+                "I'm incredibly proud to have ranked #73 globally in the HackerRank Orchestrate competition for autonomous AI agent creation.",
+                "I also hold a 5-Star Gold Badge on HackerRank for SQL.",
+                "CERTIFICATIONS:",
+                "I've earned certifications as an Oracle Cloud Infrastructure 2024 Generative AI Certified Professional, AWS Cloud Practitioner, and more."
             ],
         },
     ],
@@ -388,26 +369,7 @@ const TRASH_LOCATION = {
     name: "Trash",
     icon: "/icons/trash.svg",
     kind: "folder",
-    children: [
-        {
-            id: 1,
-            name: "trash1.png",
-            icon: "/images/image.png",
-            kind: "file",
-            fileType: "img",
-            position: "top-10 left-10",
-            imageUrl: "/images/trash-1.png",
-        },
-        {
-            id: 2,
-            name: "trash2.png",
-            icon: "/images/image.png",
-            kind: "file",
-            fileType: "img",
-            position: "top-40 left-80",
-            imageUrl: "/images/trash-2.png",
-        },
-    ],
+    children: [],
 };
 
 export const locations = {
@@ -419,15 +381,29 @@ export const locations = {
 
 const INITIAL_Z_INDEX = 1000;
 
+const createWindowState = (id, title) => ({
+    id,
+    title,
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    isFocused: false,
+    zIndex: INITIAL_Z_INDEX,
+    bounds: null,
+    previousBounds: null,
+    data: null,
+    scrollTop: 0,
+});
+
 const WINDOW_CONFIG = {
-    finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-    contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-    resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-    safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-    photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-    terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-    txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-    imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+    finder: createWindowState("finder", "Portfolio"),
+    contact: createWindowState("contact", "Contact"),
+    resume: createWindowState("resume", "Resume"),
+    safari: createWindowState("safari", "Articles"),
+    photos: createWindowState("photos", "Gallery"),
+    terminal: createWindowState("terminal", "Skills"),
+    txtfile: createWindowState("txtfile", "Text File"),
+    imgfile: createWindowState("imgfile", "Image"),
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

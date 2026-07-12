@@ -55,8 +55,8 @@ const Contact = () => {
                         <div className="relative group cursor-default">
                             <div className="absolute inset-0 bg-gradient-to-tr from-blue-400 to-purple-400 rounded-full blur-lg opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
                             <img
-                                src="/images/adrian.jpg"
-                                alt="Adrian"
+                                src="/images/nitish2.jpg"
+                                alt="Nitish"
                                 loading="lazy"
                                 className="relative w-24 h-24 rounded-full border-[4px] border-white shadow-xl object-cover transform transition-transform duration-500 hover:scale-105"
                             />

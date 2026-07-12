@@ -6,7 +6,7 @@ import useWindowStore from "../store/window";
 import { useGSAP } from "@gsap/react";
 
 const Dock = () => {
-    const { openWindow, closeWindow, windows } = useWindowStore();
+    const { openWindow, windows } = useWindowStore();
     const dockRef = useRef(null);
 
     useGSAP(() => {
@@ -74,7 +74,16 @@ const Dock = () => {
             }
         );
 
-        windows[id]?.isOpen ? closeWindow(id) : openWindow(id);
+        const win = windows[id];
+        if (!win || !win.isOpen) {
+            openWindow(id);
+        } else if (win.isMinimized) {
+            // Restore from minimize (openWindow sets isMinimized=false)
+            openWindow(id);
+        } else {
+            // Focus if already open and not minimized
+            useWindowStore.getState().focusWindow(id);
+        }
     };
 
     return (

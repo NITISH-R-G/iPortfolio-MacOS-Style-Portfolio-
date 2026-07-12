@@ -1,7 +1,7 @@
 import useWindowStore from "../store/window.js";
 
 const WindowControls = ({ target }) => {
-    const { closeWindow } = useWindowStore();
+    const { closeWindow, minimizeWindow, toggleMaximizeWindow } = useWindowStore();
     return (
         <div id="window-controls" className="flex items-center gap-2">
             <button
@@ -14,11 +14,13 @@ const WindowControls = ({ target }) => {
                 type="button"
                 className="minimize rounded-full focus-visible:ring-yellow-500 focus-visible:ring-offset-2"
                 aria-label={`Minimize ${target} window`}
+                onClick={() => minimizeWindow(target)}
             />
             <button
                 type="button"
                 className="maximize rounded-full focus-visible:ring-green-500 focus-visible:ring-offset-2"
                 aria-label={`Maximize ${target} window`}
+                onClick={() => toggleMaximizeWindow(target)}
             />
         </div>
     )
