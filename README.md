@@ -97,7 +97,9 @@ graph TD;
     }
   },
   ".gitignore": "file",
+  "CONTRIBUTING.md": "file",
   "README.md": "file",
+  "REPOSITORY_HEALTH.md": "file",
   "audit_report.md": "file",
   "eslint.config.js": "file",
   "index.html": "file",
