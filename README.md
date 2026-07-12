@@ -97,13 +97,17 @@ graph TD;
     }
   },
   ".gitignore": "file",
+  "CHANGELOG.md": "file",
   "CONTRIBUTING.md": "file",
   "README.md": "file",
   "REPOSITORY_HEALTH.md": "file",
   "audit_report.md": "file",
+  "branch_audit.md": "file",
+  "delete_safe_branches.ps1": "file",
   "eslint.config.js": "file",
   "index.html": "file",
   "jsconfig.json": "file",
+  "keep_branches.txt": "file",
   "macos_portfolio@0.0.0": "file",
   "package-lock.json": "file",
   "package.json": "file",
@@ -111,6 +115,8 @@ graph TD;
   "pr_report.md": "file",
   "public.zip": "file",
   "report.md": "file",
+  "review_manually_branches.txt": "file",
+  "safe_to_delete_branches.txt": "file",
   "src": {
     "App.jsx": "file",
     "assets": {
