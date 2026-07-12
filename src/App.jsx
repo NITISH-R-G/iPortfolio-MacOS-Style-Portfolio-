@@ -8,23 +8,33 @@ import { Finder, Resume, Safari, Terminal, Text, Image, Contact} from "./windows
 
 gsap.registerPlugin(Draggable);
 
+const DesktopWorkspace = ({ children }) => {
+    return (
+        <div id="desktop-workspace">
+            {children}
+        </div>
+    );
+};
+
 const App = () => {
     return (
         <ErrorBoundary>
             <main>
                 <Navbar />
                 <Welcome />
+                <DesktopWorkspace>
+                    <Suspense fallback={null}>
+                        <Terminal />
+                        <Safari />
+                        <Resume />
+                        <Finder />
+                        <Text />
+                        <Image />
+                        <Contact />
+                    </Suspense>
+                    <Home/>
+                </DesktopWorkspace>
                 <Dock />
-                <Suspense fallback={null}>
-                    <Terminal />
-                    <Safari />
-                    <Resume />
-                    <Finder />
-                    <Text />
-                    <Image />
-                    <Contact />
-                </Suspense>
-                <Home/>
             </main>
         </ErrorBoundary>
     );
