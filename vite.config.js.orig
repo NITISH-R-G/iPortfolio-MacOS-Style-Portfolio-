@@ -17,10 +17,10 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) return 'react';
             if (id.includes('gsap') || id.includes('@gsap/react')) return 'gsap';
             if (id.includes('react-pdf')) return 'pdf';
             if (id.includes('zustand') || id.includes('immer')) return 'zustand';
-            if (id.includes('react') || id.includes('react-dom')) return 'react';
           }
         },
       }
