@@ -15,22 +15,25 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          react: ['react', 'react-dom'],
-          gsap: ['gsap', '@gsap/react'],
-          pdf: ['react-pdf'],
-          zustand: ['zustand', 'immer']
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react')) return 'react';
+            if (id.includes('gsap')) return 'gsap';
+            if (id.includes('react-pdf')) return 'pdf';
+            if (id.includes('zustand') || id.includes('immer')) return 'zustand';
+            return 'vendor';
+          }
         }
       }
     }
   },
-    resolvers: {
-      alias: {
-          '#components' : resolve(dirname(fileURLToPath(import.meta.url)), 'src/components'),
-          '#constants' : resolve(dirname(fileURLToPath(import.meta.url)), 'src/constants'),
-          '#store' : resolve(dirname(fileURLToPath(import.meta.url)), 'src/store'),
-          '#hoc' : resolve(dirname(fileURLToPath(import.meta.url)), 'src/hoc'),
-          '#windows' : resolve(dirname(fileURLToPath(import.meta.url)), 'src/windows'),
-      }
+  resolvers: {
+    alias: {
+      '#components' : resolve(dirname(fileURLToPath(import.meta.url)), 'src/components'),
+      '#constants' : resolve(dirname(fileURLToPath(import.meta.url)), 'src/constants'),
+      '#store' : resolve(dirname(fileURLToPath(import.meta.url)), 'src/store'),
+      '#hoc' : resolve(dirname(fileURLToPath(import.meta.url)), 'src/hoc'),
+      '#windows' : resolve(dirname(fileURLToPath(import.meta.url)), 'src/windows'),
     }
+  }
 })
