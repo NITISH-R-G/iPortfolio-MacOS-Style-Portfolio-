@@ -16,22 +16,24 @@
 3. Consistently apply focus styles globally rather than locally if applicable.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Improve performance by optimizing asset loading for critical above-the-fold images, fix Vite Rollup build errors, and resolve test suite failures.
 * **Tasks**:
-  - Evaluate image rendering code and consider standardizing asset serving.
-  - Implement dynamic imports for remaining non-critical JS.
-  - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+  - Convert `manualChunks` to a function in `vite.config.js` to fix Rollup type errors.
+  - Fix `Finder.test.jsx` test cases to correctly handle the new `useWindowStore` properties (`finder: { scrollTop }`) and match the actual UI interaction (`doubleClick` vs `click`).
+  - Optimize `Dock.jsx` by removing `loading="lazy"` from dock icons to improve LCP.
+* **Implementation Roadmap**: 1. Fix broken tests and builds. 2. Remove lazy loading from above-the-fold assets. 3. Update report with metrics.
+* **Expected Outcomes**: Tests pass, build completes successfully, and LCP is improved.
 
 ## Technical Improvements
 * **Architecture**: Enforced consistent focus state handling across more components.
-* **Performance**: Maintained optimal asset loading strategies.
+* **Performance**: Improved Largest Contentful Paint (LCP) by removing `loading="lazy"` from above-the-fold `Dock.jsx` icon images.
 * **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
 * **Security**: N/A for this cycle.
-* **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
+* **Testing**: Fixed failing tests in `Finder.test.jsx` by mocking the deep store structure correctly (`scrollTop`) and fixing user event triggers (`doubleClick`).
 * **Documentation**: Updated `report.md` with continuous improvement metrics.
-* **DevOps**: Relied on established CI.
+* **DevOps**: Fixed a broken Vite build pipeline by addressing a configuration incompatibility in `manualChunks`.
 
 ## Metrics Improved
 * **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Performance gains**: Improved LCP by ensuring critical UI elements in the Dock are eagerly loaded.
+* **Deployment readiness**: Repository is now fully buildable again (`npm run build` succeeds).
