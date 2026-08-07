@@ -29,9 +29,9 @@
 * **Performance**: Maintained optimal asset loading strategies.
 * **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
 * **Security**: N/A for this cycle.
-* **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
+* **Testing**: Fixed Vitest test failures in `src/windows/Finder.test.jsx` by mocking the correct Zustand store deeply (`windows.finder.scrollTop`) and using appropriate accessibility selectors (`role="option"`).
 * **Documentation**: Updated `report.md` with continuous improvement metrics.
-* **DevOps**: Relied on established CI.
+* **DevOps**: Fixed build failure in Vite configuration by correctly setting `manualChunks` to a function to handle code splitting efficiently.
 
 ## Metrics Improved
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience. Test coverage is maintained via fixed broken tests and builds successfully run.
