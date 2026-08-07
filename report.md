@@ -29,9 +29,9 @@
 * **Performance**: Maintained optimal asset loading strategies.
 * **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
 * **Security**: N/A for this cycle.
-* **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
+* **Testing**: Fixed failing tests in `src/windows/Finder.test.jsx` by mocking deep nested Zustand states correctly and resolving issue with double clicks in tests. (`npm run test` successfully completed).
 * **Documentation**: Updated `report.md` with continuous improvement metrics.
 * **DevOps**: Relied on established CI.
 
 ## Metrics Improved
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience. Test suite coverage and reliability improved by addressing the missing mock and using appropriate event triggers (`doubleClick`).
