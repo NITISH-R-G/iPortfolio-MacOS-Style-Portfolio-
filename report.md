@@ -11,18 +11,18 @@
 * **Opportunities to outperform**: Improve Lighthouse scores by strictly enforcing `loading="lazy"` on image assets, leading to better mobile and desktop performance than pure React OS clones. Implementing native-feeling A11Y features ensures higher overall usability.
 
 ## Priority Improvements
-1. Ensure all new components use semantic HTML.
-2. Evaluate memory usage for loaded images and windows.
-3. Consistently apply focus styles globally rather than locally if applicable.
+1. Fix failing tests due to unmocked deeply nested zustand store properties.
+2. Fix vite.config.js build failure due to an invalid manualChunks function.
+
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Fix unit tests, and the build pipeline to allow deployments again.
 * **Tasks**:
-  - Evaluate image rendering code and consider standardizing asset serving.
-  - Implement dynamic imports for remaining non-critical JS.
-  - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+  - Mock `windows.finder.scrollTop` explicitly in `src/windows/Finder.test.jsx`.
+  - Change `fireEvent.doubleClick` usage to be compatible with Vitest by selecting an element.
+  - Update `vite.config.js` with the correct `manualChunks` syntax for Vite 6+.
+* **Implementation Roadmap**: 1. Fix Vitest mocks and test execution. 2. Fix Vite chunking strategy.
+* **Expected Outcomes**: 100% test pass rate, and successful build completion.
 
 ## Technical Improvements
 * **Architecture**: Enforced consistent focus state handling across more components.
@@ -34,4 +34,4 @@
 * **DevOps**: Relied on established CI.
 
 ## Metrics Improved
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Code quality gains**: Repaired unit test coverage, resolving 1 test crash and unblocking the build pipeline. `npm run test` and `npm run build` are now passing correctly.
