@@ -20,10 +20,10 @@ const Text = () => {
             <div className="p-5 space-y-6 bg-white">
                 {image ? (
                     <div className="w-full">
-                        <img
+                        <img loading="lazy"
                             src={image}
                             alt={name}
-                            loading="lazy"
+
                             className="w-full h-auto rounded"
                         />
                     </div>
