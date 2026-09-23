@@ -34,6 +34,12 @@ describe('Finder', () => {
 
     useWindowStore.mockReturnValue({
       openWindow: mockOpenWindow,
+      setScrollTop: vi.fn(),
+      windows: {
+        finder: {
+          scrollTop: 0
+        }
+      }
     });
   });
 
@@ -47,8 +53,8 @@ describe('Finder', () => {
     // Verify an item from Favorites is rendered
     expect(screen.getByRole('button', { name: /About me/i })).toBeInTheDocument();
 
-    // Verify an item from Work is rendered
-    expect(screen.getAllByRole('button', { name: /Projects/i })[0]).toBeInTheDocument();
+    // Verify an item from Work is rendered in the content area
+    expect(screen.getByRole('option', { name: 'Projects' })).toBeInTheDocument();
   });
 
   it('triggers setActiveLocation when a sidebar item is clicked', () => {
@@ -64,15 +70,15 @@ describe('Finder', () => {
     render(<FinderWindow />);
 
     // locations.work has a child named "Projects"
-    expect(screen.getAllByText('Projects').length).toBeGreaterThan(0);
+    expect(screen.getByRole('option', { name: 'Projects' })).toBeInTheDocument();
   });
 
-  it('opens a folder correctly when clicked from content', () => {
+  it('opens a folder correctly when double clicked from content', () => {
     render(<FinderWindow />);
 
     // Projects is a folder within activeLocation (work)
-    const projectsButton = screen.getAllByRole('button', { name: /Projects/i })[1]; // Get the one in the content area
-    fireEvent.click(projectsButton);
+    const projectsButton = screen.getByRole('option', { name: 'Projects' });
+    fireEvent.doubleClick(projectsButton);
 
     expect(mockSetActiveLocation).toHaveBeenCalledWith(
       expect.objectContaining({ name: 'Projects', kind: 'folder' })
