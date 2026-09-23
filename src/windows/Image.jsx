@@ -20,10 +20,10 @@ const ImageWindowContent = () => {
             <div className="p-5 bg-white">
                 {imageUrl ? (
                     <div className="w-full">
-                        <img
+                        <img loading="lazy"
                             src={imageUrl}
                             alt={name}
-                            loading="lazy"
+
                             className="w-full h-auto max-h-[70vh] object-contain rounded"
                         />
                     </div>
