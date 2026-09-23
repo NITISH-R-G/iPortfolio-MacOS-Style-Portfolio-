@@ -34,6 +34,8 @@ describe('Finder', () => {
 
     useWindowStore.mockReturnValue({
       openWindow: mockOpenWindow,
+      windows: { finder: { scrollTop: 0 } },
+      setScrollTop: vi.fn(),
     });
   });
 
@@ -71,8 +73,12 @@ describe('Finder', () => {
     render(<FinderWindow />);
 
     // Projects is a folder within activeLocation (work)
-    const projectsButton = screen.getAllByRole('button', { name: /Projects/i })[1]; // Get the one in the content area
-    fireEvent.click(projectsButton);
+    // The button in the content area can be targeted by its explicit role 'option'
+    const projectsButton = screen.getByRole('option', { name: 'Projects' });
+
+    // In testing (e.g., Finder.test.jsx), components rendering window contents like files/folders
+    // often rely on onDoubleClick (fired via fireEvent.doubleClick) rather than single clicks to trigger opening items.
+    fireEvent.doubleClick(projectsButton);
 
     expect(mockSetActiveLocation).toHaveBeenCalledWith(
       expect.objectContaining({ name: 'Projects', kind: 'folder' })
