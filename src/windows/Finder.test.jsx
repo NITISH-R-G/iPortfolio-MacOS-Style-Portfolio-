@@ -34,6 +34,7 @@ describe('Finder', () => {
 
     useWindowStore.mockReturnValue({
       openWindow: mockOpenWindow,
+      windows: { finder: { scrollTop: 0 } }
     });
   });
 
@@ -71,8 +72,11 @@ describe('Finder', () => {
     render(<FinderWindow />);
 
     // Projects is a folder within activeLocation (work)
-    const projectsButton = screen.getAllByRole('button', { name: /Projects/i })[1]; // Get the one in the content area
-    fireEvent.click(projectsButton);
+    // There are 2 "Projects" buttons: one in the sidebar and one in the content area.
+    const projectsButtons = screen.getAllByRole('option', { name: /Projects/i });
+    const contentButton = projectsButtons[0]; // The content area has role="option"
+
+    fireEvent.doubleClick(contentButton);
 
     expect(mockSetActiveLocation).toHaveBeenCalledWith(
       expect.objectContaining({ name: 'Projects', kind: 'folder' })
