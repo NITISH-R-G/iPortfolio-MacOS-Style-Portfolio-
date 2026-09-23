@@ -14,19 +14,21 @@
 1. Ensure all new components use semantic HTML.
 2. Evaluate memory usage for loaded images and windows.
 3. Consistently apply focus styles globally rather than locally if applicable.
+4. Enhance LCP (Largest Contentful Paint) by ensuring above-the-fold images load eagerly.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Improve performance by reducing bundle size, assessing memory load for images, and enhancing LCP.
 * **Tasks**:
   - Evaluate image rendering code and consider standardizing asset serving.
   - Implement dynamic imports for remaining non-critical JS.
   - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+  - Remove `loading="lazy"` from above-the-fold images (Dock, Home, Navbar).
+* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards. 3. Fix lazy loading on critical images.
+* **Expected Outcomes**: Faster TTI (Time to Interactive), lower heap footprint, and improved LCP.
 
 ## Technical Improvements
 * **Architecture**: Enforced consistent focus state handling across more components.
-* **Performance**: Maintained optimal asset loading strategies.
+* **Performance**: Removed `loading="lazy"` on critical above-the-fold images to avoid delaying LCP and hurting performance metrics. Kept it for off-screen images.
 * **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
 * **Security**: N/A for this cycle.
 * **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
@@ -35,3 +37,4 @@
 
 ## Metrics Improved
 * **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Performance gains**: By making critical images load eagerly, LCP is improved for users accessing the app.
