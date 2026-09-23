@@ -12,26 +12,27 @@
 
 ## Priority Improvements
 1. Ensure all new components use semantic HTML.
-2. Evaluate memory usage for loaded images and windows.
-3. Consistently apply focus styles globally rather than locally if applicable.
+2. Verify all images are lazy loaded using `loading="lazy"` attribute.
+3. Fix test stability issues with missing store mock properties and incorrect events.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Verify frontend asset optimizations and fix failing tests to restore test stability.
 * **Tasks**:
-  - Evaluate image rendering code and consider standardizing asset serving.
-  - Implement dynamic imports for remaining non-critical JS.
-  - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+  - Audit all `<img />` tags across the application to ensure they contain `loading="lazy"`.
+  - Fix test mocks and failing tests in `Finder.test.jsx`.
+* **Implementation Roadmap**: 1. Audit codebase for image lazy loading. 2. Update Finder test mock to return `windows: { finder: { scrollTop: 0 } }`. 3. Change click to double click in Finder test.
+* **Expected Outcomes**: Confirmed optimal asset loading state and 100% test pass rate.
 
 ## Technical Improvements
 * **Architecture**: Enforced consistent focus state handling across more components.
-* **Performance**: Maintained optimal asset loading strategies.
+* **Performance**: Verified existing lazy loading attributes on all off-screen images are present to maintain optimal LCP and TTI.
 * **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
 * **Security**: N/A for this cycle.
-* **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
+* **Testing**: Fixed unstable `Finder.test.jsx` test cases by properly mocking nested window state and accurately mimicking user double-click events (`fireEvent.doubleClick`).
 * **Documentation**: Updated `report.md` with continuous improvement metrics.
 * **DevOps**: Relied on established CI.
 
 ## Metrics Improved
 * **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Performance gains**: Verified optimal asset loading strategies are actively maintained.
+* **Test coverage improvements**: Repaired broken unit tests by using precise store mock payloads.
