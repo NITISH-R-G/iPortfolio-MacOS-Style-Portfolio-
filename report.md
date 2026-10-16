@@ -1,37 +1,41 @@
 ## Repository Health Report
-* **Strengths**: Solid and responsive macOS UI simulation. Good modular architecture using React 19, GSAP for smooth animations, and Zustand for state. CI is enabled. Tests are running.
-* **Weaknesses**: Missing deeper accessibility (A11Y) attributes and focus visibility on interactive elements. Sub-optimal frontend asset loading strategies (e.g., lack of lazy loading on off-screen images).
-* **Risks**: Continued asset growth could increase bundle sizes and affect time-to-interactive (TTI) and Largest Contentful Paint (LCP) if not lazily loaded or optimized. Missing semantic tags or visual focus indicators could result in poor user experience for keyboard and screen reader users.
-* **Opportunities**: Optimize images via lazy loading attribute. Enhance a11y compliance for all links and buttons, starting with window content.
+* **Strengths**: Solid and responsive macOS UI simulation. Good modular architecture using React 19, GSAP for smooth animations, and Zustand for state. CI is enabled and active. Tests are automated via Vitest.
+* **Weaknesses**: Build configuration (`vite.config.js`) possessed fragile code splitting logic (`manualChunks` object map). Deprecated Node version 20 used in CI workflows. Above-the-fold images used `loading="lazy"` which impacts LCP. Broken test due to missing nested mock state for Zustand window store.
+* **Risks**: Failing tests obscure regressions. Build failures block deployment. Legacy CI nodes cause security or operational deprecation warnings on GitHub Actions.
+* **Opportunities**: Modernize CI workflow to Node 22 (LTS). Eagerly load critical LCP images for performance. Stabilize testing environment with resilient `getByRole` selectors and accurate deep state mocks.
 
 ## Competitor Analysis
-* **Repositories analyzed**: open source macOS clones, personal portfolios (e.g., macos-web, portfolio-macos).
-* **Advantages discovered**: High interactivity. Good use of modular state variables allowing independent window control.
-* **Gaps identified**: Missing comprehensive accessibility (A11Y) layers natively seen in competitor frameworks. Asset loading isn't fully optimized out of the box.
-* **Opportunities to outperform**: Improve Lighthouse scores by strictly enforcing `loading="lazy"` on image assets, leading to better mobile and desktop performance than pure React OS clones. Implementing native-feeling A11Y features ensures higher overall usability.
+* **Repositories analyzed**: open source macOS clones, web portfolios with windowed interfaces (e.g., macos-web, portfolio-macos, react-os).
+* **Advantages discovered**: High interactivity. Modular state management allowing independent window control.
+* **Gaps identified**: Asset loading isn't fully optimized out of the box. Legacy configurations. Flaky tests from hardcoded array queries in mock data environments.
+* **Opportunities to outperform**: Improve Lighthouse LCP scores by eagerly loading critical UI elements while lazily loading off-screen elements. Implement more robust, semantic test assertions for higher test reliability.
 
 ## Priority Improvements
-1. Ensure all new components use semantic HTML.
-2. Evaluate memory usage for loaded images and windows.
-3. Consistently apply focus styles globally rather than locally if applicable.
+1. Resolve critical `Vitest` failures by fixing broken mock states.
+2. Stabilize the Vite production build by updating Rollup's chunking logic.
+3. Modernize the GitHub Actions CI pipeline to the latest Node LTS.
+4. Optimize Largest Contentful Paint (LCP) by eagerly loading above-the-fold icons.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Enhance repository reliability through test and build stabilization, and improve performance and CI modernity.
 * **Tasks**:
-  - Evaluate image rendering code and consider standardizing asset serving.
-  - Implement dynamic imports for remaining non-critical JS.
-  - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+  - Fix test crash in `src/windows/Finder.test.jsx`.
+  - Fix Rollup object map limitation in `vite.config.js` via a functional approach.
+  - Upgrade Node version to 22 in `.github/workflows/ci-cd.yml`.
+  - Remove `loading="lazy"` from `Home.jsx`, `Navbar.jsx`, and `Dock.jsx`.
+* **Implementation Roadmap**: 1. Update tests & mocks. 2. Refactor vite config. 3. Update CI. 4. Refactor image loading attributes.
+* **Expected Outcomes**: 100% test pass rate, stable production builds, zero deprecation warnings from GitHub Actions, and improved LCP performance.
 
 ## Technical Improvements
-* **Architecture**: Enforced consistent focus state handling across more components.
-* **Performance**: Maintained optimal asset loading strategies.
-* **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
-* **Security**: N/A for this cycle.
-* **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
-* **Documentation**: Updated `report.md` with continuous improvement metrics.
-* **DevOps**: Relied on established CI.
+* **Architecture**: Adjusted testing strategy to use semantic DOM queries (`getByRole`) instead of brittle array indices.
+* **Performance**: Removed `loading="lazy"` from above-the-fold icons (Dock, Navbar, Home) optimizing Largest Contentful Paint (LCP).
+* **Scalability**: Used robust string matching for chunk splitting in Rollup to prevent broken dependency trees.
+* **Security**: Updated CI pipelines to Node 22 (LTS) avoiding end-of-life risks associated with Node 20.
+* **Testing**: Restored 100% passing rate in Vitest by defining complete nested mock states.
+* **Documentation**: Updated `report.md` capturing sprint results and technical changes.
+* **DevOps**: Modernized CI to Node 22 (LTS) providing long-term runner stability.
 
 ## Metrics Improved
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Code quality gains**: Stabilized unit testing and build configurations.
+* **Performance gains**: Eliminated lazy loading on critical LCP images for faster initial render.
+* **Reliability gains**: Resolved test-suite failure providing reliable regression safety nets.
