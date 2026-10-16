@@ -42,7 +42,7 @@
     "jsdom": "^29.1.1",
     "madge": "^8.0.0",
     "openai": "^6.42.0",
-    "playwright": "^1.61.0",
+    "playwright": "^1.62.1",
     "vite": "^8.0.16",
     "vitest": "^4.1.7"
   }

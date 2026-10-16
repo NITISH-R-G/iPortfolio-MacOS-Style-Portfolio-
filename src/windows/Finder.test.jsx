@@ -34,6 +34,8 @@ describe('Finder', () => {
 
     useWindowStore.mockReturnValue({
       openWindow: mockOpenWindow,
+      setScrollTop: vi.fn(),
+      windows: { finder: { scrollTop: 0 } }
     });
   });
 
@@ -67,12 +69,13 @@ describe('Finder', () => {
     expect(screen.getAllByText('Projects').length).toBeGreaterThan(0);
   });
 
-  it('opens a folder correctly when clicked from content', () => {
+  it('opens a folder correctly when double-clicked from content', () => {
     render(<FinderWindow />);
 
     // Projects is a folder within activeLocation (work)
-    const projectsButton = screen.getAllByRole('button', { name: /Projects/i })[1]; // Get the one in the content area
-    fireEvent.click(projectsButton);
+    // First, find the specific option element (in the content area) by using the role 'option'
+    const projectsButton = screen.getByRole('option', { name: /Projects/i });
+    fireEvent.doubleClick(projectsButton);
 
     expect(mockSetActiveLocation).toHaveBeenCalledWith(
       expect.objectContaining({ name: 'Projects', kind: 'folder' })
