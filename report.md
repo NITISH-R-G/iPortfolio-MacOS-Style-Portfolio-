@@ -16,17 +16,18 @@
 3. Consistently apply focus styles globally rather than locally if applicable.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Improve performance by optimizing Largest Contentful Paint (LCP) for above-the-fold content and assessing memory load for images.
 * **Tasks**:
   - Evaluate image rendering code and consider standardizing asset serving.
+  - Adjust loading strategy for critical above-the-fold images (Dock, Navbar, Home) to load eagerly rather than lazily.
   - Implement dynamic imports for remaining non-critical JS.
   - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards. 3. Adjust loading attributes on critical elements.
+* **Expected Outcomes**: Faster TTI (Time to Interactive), better LCP (Largest Contentful Paint) for above-the-fold content, and lower heap footprint.
 
 ## Technical Improvements
 * **Architecture**: Enforced consistent focus state handling across more components.
-* **Performance**: Maintained optimal asset loading strategies.
+* **Performance**: Replaced `loading="lazy"` with `loading="eager"` on critical above-the-fold images (Dock icons, Navbar logo/icons, Home folder icons) to prevent deferred loading, thereby improving Largest Contentful Paint (LCP) performance on initial render.
 * **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
 * **Security**: N/A for this cycle.
 * **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
@@ -34,4 +35,5 @@
 * **DevOps**: Relied on established CI.
 
 ## Metrics Improved
+* **Performance gains**: Switching critical above-the-fold images from lazy to eager loading immediately resolves LCP bottlenecks, ensuring elements like the Dock and Navbar render optimally without delay on both desktop and mobile devices.
 * **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
