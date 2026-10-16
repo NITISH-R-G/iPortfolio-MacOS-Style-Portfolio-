@@ -16,13 +16,12 @@
 3. Consistently apply focus styles globally rather than locally if applicable.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Fix broken test suites, fix broken vite build config, maintain continuous improvement mode.
 * **Tasks**:
-  - Evaluate image rendering code and consider standardizing asset serving.
-  - Implement dynamic imports for remaining non-critical JS.
-  - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+  - Fix test failures in Finder component by mocking store correctly.
+  - Fix vite build failure by correctly declaring manualChunks.
+* **Implementation Roadmap**: 1. Patch broken files 2. Ensure tests pass and build succeeds.
+* **Expected Outcomes**: Green CI pipeline, passing test suites.
 
 ## Technical Improvements
 * **Architecture**: Enforced consistent focus state handling across more components.
@@ -34,4 +33,5 @@
 * **DevOps**: Relied on established CI.
 
 ## Metrics Improved
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Code quality gains**: Fixed testing errors with double click events and mocked stores.
+* **Performance**: Restored build pipeline functionality.
