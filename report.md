@@ -16,22 +16,21 @@
 3. Consistently apply focus styles globally rather than locally if applicable.
 
 ## Sprint Plan
-* **Sprint Goal**: Improve performance by reducing bundle size and assess memory load for images.
+* **Sprint Goal**: Optimize Largest Contentful Paint (LCP) by eagerly loading above-the-fold image assets.
 * **Tasks**:
-  - Evaluate image rendering code and consider standardizing asset serving.
-  - Implement dynamic imports for remaining non-critical JS.
-  - Test memory load on simulated devices.
-* **Implementation Roadmap**: 1. Audit static assets. 2. Establish image optimization standards.
-* **Expected Outcomes**: Faster TTI (Time to Interactive) and lower heap footprint.
+  - Remove `loading="lazy"` attribute from critical icons (Dock, Navbar) and Home folder images.
+  - Test build and run linter/tests to ensure regression-free deployment.
+* **Implementation Roadmap**: 1. Audit static assets for `loading="lazy"`. 2. Remove lazy loading from above-the-fold imagery.
+* **Expected Outcomes**: Better LCP (Largest Contentful Paint) scores by unblocking critical asset rendering on initial load.
 
 ## Technical Improvements
-* **Architecture**: Enforced consistent focus state handling across more components.
-* **Performance**: Maintained optimal asset loading strategies.
-* **Scalability**: Standardizing accessibility classes creates a more maintainable pattern for new windows.
+* **Architecture**: Improved rendering strategy by decoupling LCP-critical images from native lazy loading behavior.
+* **Performance**: Enhanced LCP and initial perceived load time for the landing page.
+* **Scalability**: Establishing clear rules for which images must be eager vs lazy supports better long-term performance maintenance.
 * **Security**: N/A for this cycle.
 * **Testing**: Maintained current test suite stability (`npm run test` successfully completed).
-* **Documentation**: Updated `report.md` with continuous improvement metrics.
-* **DevOps**: Relied on established CI.
+* **Documentation**: Updated `report.md` with continuous improvement metrics on LCP optimizations.
+* **DevOps**: Relied on established CI and verified builds locally.
 
 ## Metrics Improved
-* **Code quality gains**: Focus indicators ensure that keyboard interactions conform to WCAG guidelines for all main interactive elements (Dock, Safari browser frame, PDF controls), leading to a much better user experience.
+* **Performance gains**: Critical rendering path unblocked for UI components like Dock, Navbar, and Home by eliminating deferred loading on key images.
